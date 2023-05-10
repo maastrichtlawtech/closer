@@ -1,0 +1,48 @@
+Name: Article 12
+
+Title: Authorising operations in the ‘specific’ category
+
+Content:
+1.   The competent authority shall evaluate the risk assessment and the robustness of the mitigating measures that the UAS operator proposes to keep the UAS operation safe in all phases of flight.
+
+2.   The competent authority shall grant an operational authorisation when the evaluation concludes that:
+
+(a)	the operational safety objectives take account of the risks of the operation;
+
+(b)	the combination of mitigation measures concerning the operational conditions to perform the operations, the competence of the personnel involved and the technical features of the unmanned aircraft, are adequate and sufficiently robust to keep the operation safe in view of the identified ground and air risks;
+
+(c)	the UAS operator has provided a statement confirming that the intended operation complies with any applicable Union and national rules relating to it, in particular, with regard to privacy, data protection, liability, insurance, security and environmental protection.
+
+3.   When the operation is not deemed sufficiently safe, the competent authority shall inform the applicant accordingly, giving reasons for its refusal to issue the operational authorisation.
+
+4.   The operational authorisation granted by the competent authority shall detail:
+
+(a)	the scope of the authorisation;
+
+(b)	the ‘specific’ conditions that shall apply:
+
+i.	to the UAS operation and the operational limitations;
+
+ii.	to the required competency of the UAS operator and, where applicable, of the remote pilots;
+
+iii.	to the technical features of the UAS, including the certification of the UAS, if applicable;
+
+(c)	the following information:
+
+i.	the registration number of the UAS operator and the technical features of the UAS;
+
+ii.	a reference to the operational risk assessment developed by the UAS operator;
+
+iii.	the operational limitations and conditions of the operation;
+
+iv.	the mitigation measures that the UAS operator has to apply;
+
+v.	the location(s) where the operation is authorised to take place and any other locations in a Member States in accordance with Article 13;
+
+vi.	all documents and records relevant for the type of operation and the type of events that should be reported in addition to those defined in Regulation (EU) No 376/2014 of the European Parliament and of the Council (8).
+
+5.   Upon receipt of the declaration referred to in paragraph 5 of Article 5, the competent authority shall:
+
+(a)	verify that it contains all elements set out in paragraph 2 of point UAS.SPEC.020 of the Annex;
+
+(b)	if this is the case, provide the UAS operator with a confirmation of receipt and completeness without undue delay so that the operator may start the operation.

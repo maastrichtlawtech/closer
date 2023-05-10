@@ -1,0 +1,10 @@
+Name: Article 20
+
+Title: Particular provisions concerning the use of certain UAS in the ‘open’ category
+
+Content:
+UAS types within the meaning of Decision No 768/2008/EC of the European Parliament and of the Council (9), which do not comply with Delegated Regulation (EU) 2019/945 and which are not privately-built are allowed to continue to be operated under the following conditions, when they have been placed on the market before 1 July 2022:
+
+(a)	in subcategory A1 as defined in Part A of the Annex, provided that the unmanned aircraft has a maximum take-off mass of less than 250 g, including its payload;
+
+(b)	in subcategory A3 as defined in Part A of the Annex, provided that the unmanned aircraft has a maximum take-off mass of less than 25 kg, including its fuel and payload.

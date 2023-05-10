@@ -1,0 +1,12 @@
+Name: Article 22
+
+Title: Transitional provisions
+
+Content:
+Without prejudice to Article 20, the use of UAS in the ‘open’ category which do not comply with the requirements of Parts 1 to 5 of the Annex to Delegated Regulation (EU) 2019/945 shall be allowed for a transitional period of two years starting one year after the date of entry into force of this Regulation, subject to the following conditions:
+
+(a)	unmanned aircraft with a maximum take-off mass of less than 500 g are operated within the operational requirements set out in points UAS.OPEN.020(1) of Part A of the Annex by a remote pilot having competency level defined by the Member State concerned;
+
+(b)	unmanned aircraft with a maximum take-off mass of less than 2 kg is operated by keeping a minimum horizontal distance of 50 meters from people and the remote pilots have a competency level at least equivalent to the one set out in point UAS.OPEN.030(2) of Part A of the Annex;
+
+(c)	unmanned aircraft with a maximum take-off mass of more than 2 kg and less than 25kg is operated within the operational requirements set out in point UAS.OPEN.040(1) and (2) and the remote pilots have a competency level at least equivalent to the one set out in point UAS.OPEN.020(4)(b) of Part A of the Annex.

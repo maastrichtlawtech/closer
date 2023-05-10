@@ -1,0 +1,54 @@
+Name: Article 14
+
+Title: Registration of UAS operators and certified UAS
+
+Content:
+1.   Member States shall establish and maintain accurate registration systems for UAS whose design is subject to certification and for UAS operators whose operation may present a risk to safety, security, privacy, and protection of personal data or environment.
+
+2.   The registration systems for UAS operators shall provide the fields for introducing and exchanging the following information:
+
+(a)	the full name and the date of birth for natural persons and the name and their identification number for legal persons;
+
+(b)	the address of UAS operators;
+
+(c)	their email address and telephone number;
+
+(d)	an insurance policy number for UAS if required by Union or national law;
+
+(e)	the confirmation by legal persons of the following statement: ‘All personnel directly involved in the operations are competent to perform their tasks, and the UAS will be operated only by remote pilots with the appropriate level of competency’;
+
+(f)	operational authorisations and LUCs held and declarations followed by a confirmation in accordance with Article 12(5)(b).
+
+3.   The registration systems for unmanned aircraft whose design is subject to certification shall provide the fields for introducing and exchanging the following information:
+
+(a)	manufacturer's name;
+
+(b)	manufacturer's designation of the unmanned aircraft;
+
+(c)	unmanned aircraft's serial number;
+
+(d)	full name, address, email address and telephone number of the natural or legal person under whose name the unmanned aircraft is registered.
+
+4.   Member States shall ensure that registration systems are digital and interoperable and allow for mutual access and exchange of information through the repository referred to in Article 74 of Regulation (EU) 2018/1139.
+
+5.   UAS operators shall register themselves:
+
+(a)	when operating within the ‘open’ category any of the following unmanned aircraft:
+
+i.	with a MTOM of 250 g or more, or, which in the case of an impact can transfer to a human kinetic energy above 80 Joules;
+
+ii.	that is equipped with a sensor able to capture personal data, unless it complies with Directive 2009/48/EC.
+
+(b)	when operating within the ‘specific’ category an unmanned aircraft of any mass.
+
+6.   UAS operators shall register themselves in the Member State where they have their residence for natural persons or where they have their principal place of business for legal persons and ensure that their registration information is accurate. A UAS operator cannot be registered in more than one Member State at a time.
+
+Member States shall issue a unique digital registration number for UAS operators and for the UAS that require registration, allowing their individual identification.
+
+The registration number for UAS operators shall be established on the basis of standards that support the interoperability of the registration systems;
+
+7.   The owner of an unmanned aircraft whose design is subject to certification shall register the unmanned aircraft.
+
+The nationality and registration mark of an unmanned aircraft shall be established in line with ICAO Annex 7. An unmanned aircraft cannot be registered in more than one State at a time.
+
+8.   The UAS operators shall display their registration number on every unmanned aircraft meeting the conditions described in paragraph 5.

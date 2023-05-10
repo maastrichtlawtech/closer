@@ -1,0 +1,100 @@
+Name: Article 11
+
+Title: Rules for conducting an operational risk assessment
+
+Content:
+1.   An operational risk assessment shall:
+
+(a)	describe the characteristics of the UAS operation;
+
+(b)	propose adequate operational safety objectives;
+
+(c)	identify the risks of the operation on the ground and in the air considering all of the below:
+
+i.	the extent to which third parties or property on the ground could be endangered by the activity;
+
+ii.	the complexity, performance and operational characteristics of the unmanned aircraft involved;
+
+iii.	the purpose of the flight, the type of UAS, the probability of collision with other aircraft and class of airspace used;
+
+iv.	the type, scale, and complexity of the UAS operation or activity, including, where relevant, the size and type of the traffic handled by the responsible organisation or person;
+
+v.	the extent to which the persons affected by the risks involved in the UAS operation are able to assess and exercise control over those risks.
+
+(d)	identify a range of possible risk mitigating measures;
+
+(e)	determine the necessary level of robustness of the selected mitigating measures in such a way that the operation can be conducted safely.
+
+2.   The description of the UAS operation shall include at least the following:
+
+(a)	the nature of the activities performed;
+
+(b)	the operational environment and geographical area for the intended operation, in particular overflown population, orography, types of airspace, airspace volume where the operation will take place and which airspace volume is kept as necessary risk buffers, including the operational requirements for geographical zones;
+
+(c)	the complexity of the operation, in particular which planning and execution, personnel competencies, experience and composition, required technical means are planned to conduct the operation;
+
+(d)	the technical features of the UAS, including its performance in view of the conditions of the planned operation and, where applicable, its registration number;
+
+(e)	the competence of the personnel for conducting the operation including their composition, role, responsibilities, training and recent experience.
+
+3.   The assessment shall propose a target level of safety, which shall be equivalent to the safety level in manned aviation, in view of the specific characteristics of UAS operation.
+
+4.   The identification of the risks shall include the determination of all of the below:
+
+(a)	the unmitigated ground risk of the operation taking into account the type of operation and the conditions under which the operation takes place, including at least the following criteria:
+
+i.	VLOS or BVLOS;
+
+ii.	population density of the overflown areas;
+
+iii.	flying over an assembly of people;
+
+iv.	the dimension characteristics of the unmanned aircraft;
+
+(b)	the unmitigated air risk of the operation taking into account all of the below:
+
+i.	the exact airspace volume where the operation will take place, extended by a volume of airspace necessary for contingency procedures;
+
+ii.	the class of the airspace;
+
+iii.	the impact on other air traffic and air traffic management (ATM) and in particular:
+
+—	the altitude of the operation;
+
+—	controlled versus uncontrolled airspace;
+
+—	aerodrome versus non-aerodrome environment;
+
+—	airspace over urban versus rural environment;
+
+—	separation from other traffic.
+
+5.   The identification of the possible mitigation measures necessary to meet the proposed target level of safety shall consider the following possibilities:
+
+(a)	containment measures for people on the ground;
+
+(b)	strategic operational limitations to the UAS operation, in particular:
+
+i.	restricting the geographical volumes where the operation takes place;
+
+ii.	restricting the duration or schedule of the time slot in which the operation takes place;
+
+(c)	strategic mitigation by common flight rules or common airspace structure and services;
+
+(d)	capability to cope with possible adverse operating conditions;
+
+(e)	organisation factors such as operational and maintenance procedures elaborated by the UAS operator and maintenance procedures compliant with the manufacturer's user manual;
+
+(f)	the level of competency and expertise of the personnel involved in the safety of the flight;
+
+(g)	the risk of human error in the application of the operational procedures;
+
+(h)	the design features and performance of the UAS in particular:
+
+i.	the availability of means to mitigate risks of collision;
+
+ii.	the availability of systems limiting the energy at impact or the frangibility of the unmanned aircraft;
+
+iii.	the design of the UAS to recognised standards and the fail-safe design.
+
+6.   The robustness of the proposed mitigating measures shall be assessed in order to determine whether they are commensurate with the safety objectives and risks of the intended operation, particularly to make sure that every stage of the operation is safe.

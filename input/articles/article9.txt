@@ -1,0 +1,24 @@
+Name: Article 9
+
+Title: Minimum age for remote pilots
+
+Content:
+1.   The minimum age for remote pilots operating a UAS in the ‘open’ and ‘specific’ category shall be 16 years.
+
+2.   No minimum age for remote pilots shall be required:
+
+(a)	when they operate in subcategory A1 as specified in Part A of the Annex to this Regulation, with a UAS Class C0 defined in Part 1 of the Annex to Delegated Regulation (EU) 2019/945 that is a toy within the meaning of Directive 2009/48/EC;
+
+(b)	for privately-built UAS with a maximum take-off mass of less than 250g;
+
+(c)	when they operate under the direct supervision of a remote pilot complying with paragraph 1 and Article 8.
+
+3.   Member States may lower the minimum age following a risk-based approach taking into account specific risks associated with the operations in their territory:
+
+(a)	for remote pilots operating in the ‘open’ category by up to 4 years;
+
+(b)	for remote pilots operating in the ‘specific’ category by up to 2 years.
+
+4.   Where a Member State lowers the minimum age for remote pilots, those remote pilots shall only be allowed to operate a UAS on the territory of that Member State.
+
+5.   Member States may define a different minimum age for remote pilots operating in the framework of model aircraft clubs or associations in the authorisation issued in accordance with Article 16.

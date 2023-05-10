@@ -1,0 +1,6 @@
+Name: Article 10
+
+Title: Rules and procedures for the airworthiness of UAS
+
+Content:
+Unless privately-built, or used for operations referred to in Article 16, or meeting the conditions defined in Article 20, UAS used in operations set out in this Regulation shall comply with the technical requirements and rules and procedures for the airworthiness defined in the delegated acts adopted pursuant to Article 58 of Regulation (EU) 2018/1139.

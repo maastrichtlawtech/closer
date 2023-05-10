@@ -1,0 +1,14 @@
+Name: Article 19
+
+Title: Safety information
+
+Content:
+1.   The competent authorities of the Member States and market surveillance and control authorities referred to in Article 36 of Delegated Regulation (EU) 2019/945 shall cooperate on safety matters and establish procedures for the efficient exchange of safety information.
+
+2.   Each UAS operator shall report to the competent authority on any safety-related occurrence and exchange information regarding its UAS in compliance with Regulation (EU) No 376/2014.
+
+3.   The European Union Aviation Safety Agency (‘the Agency’) and the competent authorities shall collect, analyse and publish safety information concerning UAS operations in their territory in accordance with Article 119 of Regulation (EU) 2018/1139 and its implementing acts.
+
+4.   Upon receiving any of the information referred to in paragraphs 1, 2 or 3, the Agency and the competent authority shall take the necessary measures to address any safety issues on the best available evidence and analysis, taking into account interdependencies between the different domains of aviation safety, and between aviation safety, cyber security and other technical domains of aviation regulation.
+
+5.   Where the competent authority or the Agency takes measures in accordance with paragraph 4, it shall immediately notify all relevant interested parties and organisations that need to comply with those measures in accordance with Regulation (EU) 2018/1139 and its implementing acts.

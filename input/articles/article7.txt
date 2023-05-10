@@ -1,0 +1,15 @@
+Name: Article 7
+
+Title: Rules and procedures for the operation of UAS
+
+Content:
+1.   UAS operations in the ‘open’ category shall comply with the operational limitations set out in Part A of the Annex.
+
+2.   UAS operations in the ‘specific’ category shall comply with the operational limitations set out in the operational authorisation as referred to in Article 12 or the authorisation as referred to in Article 16, or in a standard scenario defined in Appendix 1 to the Annex as declared by the UAS operator.
+
+This paragraph shall not apply where the UAS operator holds an LUC with appropriate privileges.
+
+UAS operations in the ‘specific’ category shall be subject to the applicable operational requirements laid down in Commission Implementing Regulation (EU) No 923/2012 (5).
+
+3.   UAS operations in the ‘certified’ category shall be subject to the applicable operational requirements laid down in Implementing Regulation (EU) No 923/2012 and Commission Regulations (EU) No 965/2012 (6) and (EU) No 1332/2011 (7).
+

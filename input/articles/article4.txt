@@ -1,0 +1,20 @@
+Name: Article 4
+
+Title: ‘Open’ category of UAS operations
+
+Content:
+1.   Operations shall be classified as UAS operations in the ‘open’ category only where the following requirements are met:
+
+(a)	the UAS belongs to one of the classes set out in Delegated Regulation (EU) 2019/945 or is privately built or meets the conditions defined in Article 20;
+
+(b)	the unmanned aircraft has a maximum take-off mass of less than 25 kg;
+
+(c)	the remote pilot ensures that the unmanned aircraft is kept at a safe distance from people and that it is not flown over assemblies of people;
+
+(d)	the remote pilot keeps the unmanned aircraft in VLOS at all times except when flying in follow-me mode or when using an unmanned aircraft observer as specified in Part A of the Annex;
+
+(e)	during flight, the unmanned aircraft is maintained within 120 metres from the closest point of the surface of the earth, except when overflying an obstacle, as specified in Part A of the Annex
+
+(f)	during flight, the unmanned aircraft does not carry dangerous goods and does not drop any material;
+
+2.   UAS operations in the ‘open’ category shall be divided in three sub-categories in accordance with the requirements set out in Part A of the Annex.

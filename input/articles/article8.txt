@@ -1,0 +1,26 @@
+Title: Article 8
+
+Name: Rules and procedures for the competency of remote pilots
+
+Content:
+1.   Remote pilots operating UAS in the ‘open’ category shall comply with the competency requirements set in Part A of the Annex.
+
+2.   Remote pilots operating UAS in the ‘specific’ category shall comply with the competency requirements set out in the operational authorisation by the competent authority or in the standard scenario defined in Appendix 1 to the Annex or as defined by the LUC and shall have at least the following competencies:
+
+(a)	ability to apply operational procedures (normal, contingency and emergency procedures, flight planning, pre-flight and post-flight inspections);
+
+(b)	ability to manage aeronautical communication;
+
+(c)	manage the unmanned aircraft flight path and automation;
+
+(d)	leadership, teamwork and self-management;
+
+(e)	problem solving and decision-making;
+
+(f)	situational awareness;
+
+(g)	workload management;
+
+(h)	coordination or handover, as applicable.
+
+3.   Remote pilots operating in the framework of model aircraft clubs or associations shall comply with the minimum competency requirements defined in the authorisation granted in accordance with Article 16.

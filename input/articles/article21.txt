@@ -1,0 +1,11 @@
+Name: Article 21
+
+Title: Adaptation of authorisations, declarations and certificates
+
+Content:
+1.   Authorisations granted to UAS operators, certificates of remote pilot competency and declarations made by UAS operators or equivalent documentation, issued on the basis of national law, shall remain valid until 1 July 2021.
+
+2.   By 1 July 2021 Member States shall convert their existing certificates of remote pilot competency and their UAS operator authorisations or declarations, or equivalent documentation, including those issued until that date, in accordance with this Regulation.
+
+3.   Without prejudice to Article 14, UAS operations conducted in the framework of model aircraft clubs and associations shall be allowed to continue in accordance with relevant national rules and without an authorisation in accordance with Article 16 until 1 July 2022.
+

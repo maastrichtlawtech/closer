@@ -1,0 +1,70 @@
+Name: Article 2
+
+Title: Definitions
+
+Content:
+For the purposes of this Regulation, the definitions in Regulation (EU) 2018/1139 apply.
+
+The following definitions also apply:
+
+(1)	‘unmanned aircraft system’ (‘UAS’) means an unmanned aircraft and the equipment to control it remotely;
+
+(2)	‘unmanned aircraft system operator’ (‘UAS operator’) means any legal or natural person operating or intending to operate one or more UAS;
+
+(3)	‘assemblies of people’ means gatherings where persons are unable to move away due to the density of the people present;
+
+(4)	‘UAS geographical zone’ means a portion of airspace established by the competent authority that facilitates, restricts or excludes UAS operations in order to address risks pertaining to safety, privacy, protection of personal data, security or the environment, arising from UAS operations;
+
+(5)	‘robustness’ means the property of mitigation measures resulting from combining the safety gain provided by the mitigation measures and the level of assurance and integrity that the safety gain has been achieved;
+
+(6)	‘standard scenario’ means a type of UAS operation in the ‘specific’ category, as defined in Appendix 1 of the Annex, for which a precise list of mitigating measures has been identified in such a way that the competent authority can be satisfied with declarations in which operators declare that they will apply the mitigating measures when executing this type of operation;
+
+(7)	‘visual line of sight operation’ (‘VLOS’) means a type of UAS operation in which, the remote pilot is able to maintain continuous unaided visual contact with the unmanned aircraft, allowing the remote pilot to control the flight path of the unmanned aircraft in relation to other aircraft, people and obstacles for the purpose of avoiding collisions;
+
+(8)	‘beyond visual line of sight operation’ (‘BVLOS’) means a type of UAS operation which is not conducted in VLOS;
+
+(9)	‘light UAS operator certificate’ (‘LUC’) means a certificate issued to a UAS operator by a competent authority as set out in part C of the Annex;
+
+(10)	‘model aircraft club or association’ means an organisation legally established in a Member State for the purpose of conducting leisure flights, air displays, sporting activities or competition activities using UAS;
+
+(11)	‘dangerous goods’ means articles or substances, which are capable of posing a hazard to health, safety, property or the environment in the case of an incident or accident, that the unmanned aircraft is carrying as its payload, including in particular:
+
+(a)	explosives (mass explosion hazard, blast projection hazard, minor blast hazard, major fire hazard, blasting agents, extremely insensitive explosives);
+
+(b)	gases (flammable gas, non-flammable gas, poisonous gas, oxygen, inhalation hazard);
+
+(c)	flammable liquids (flammable liquids; combustible, fuel oil, gasoline);
+
+(d)	flammable solids (flammable solids, spontaneously combustible solids, dangerous when wet);
+
+(e)	oxidising agents and organic peroxides;
+
+(f)	toxic and infectious substances (poison, biohazard);
+
+(g)	radioactive substances;
+
+(h)	corrosive substances;
+
+(12)	‘payload’ means instrument, mechanism, equipment, part, apparatus, appurtenance, or accessory, including communications equipment, that is installed in or attached to the aircraft and is not used or intended to be used in operating or controlling an aircraft in flight, and is not part of an airframe, engine, or propeller;
+
+(13)	‘direct remote identification’ means a system that ensures the local broadcast of information about a unmanned aircraft in operation, including the marking of the unmanned aircraft, so that this information can be obtained without physical access to the unmanned aircraft;
+
+(14)	‘follow-me mode’ means a mode of operation of a UAS where the unmanned aircraft constantly follows the remote pilot within a predetermined radius;
+
+(15)	‘geo-awareness’ means a function that, based on the data provided by Member States, detects a potential breach of airspace limitations and alerts the remote pilots so that they can take immediate and effective action to prevent that breach;
+
+(16)	‘privately built UAS’ means a UAS assembled or manufactured for the builder's own use, not including UAS assembled from sets of parts placed on the market as a single ready-to-assemble kit;
+
+(17)	‘autonomous operation’ means an operation during which an unmanned aircraft operates without the remote pilot being able to intervene;
+
+(18)	‘uninvolved persons’ means persons who are not participating in the UAS operation or who are not aware of the instructions and safety precautions given by the UAS operator;
+
+(19)	‘making available on the market’ means any supply of a product for distribution, consumption or use on the Union market in the course of a commercial activity, whether in exchange of payment or free of charge;
+
+(20)	‘placing on the market’ means the first making available of a product on the Union market;
+
+(21)	‘controlled ground area’ means the ground area where the UAS is operated and within which the UAS operator can ensure that only involved persons are present;
+
+(22)	‘maximum take-off mass’ (‘MTOM’) means the maximum Unmanned Aircraft mass, including payload and fuel, as defined by the manufacturer or the builder, at which the Unmanned Aircraft can be operated;
+
+(23)	‘unmanned sailplane’ means an unmanned aircraft that is supported in flight by the dynamic reaction of the air against its fixed lifting surfaces, the free flight of which does not depend on an engine. It may be equipped with an engine to be used in case of emergency.

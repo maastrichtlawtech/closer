@@ -1,0 +1,18 @@
+Name: Article 6
+
+Title: ‘Certified’ category of UAS operations
+
+Content:
+1.   Operations shall be classified as UAS operations in the ‘certified’ category only where the following requirements are met:
+
+(a)	the UAS is certified pursuant to points (a), (b) and (c) of paragraph 1 of Article 40 of Delegated Regulation (EU) 2019/945; and
+
+(b)	the operation is conducted in any of the following conditions:
+
+i.	over assemblies of people;
+
+ii.	involves the transport of people;
+
+iii.	involves the carriage of dangerous goods, that may result in high risk for third parties in case of accident.
+
+2.   In addition, UAS operations shall be classified as UAS operations in the ‘certified’ category where the competent authority, based on the risk assessment provided for in Article 11, considers that the risk of the operation cannot be adequately mitigated without the certification of the UAS and of the UAS operator and, where applicable, without the licensing of the remote pilot.

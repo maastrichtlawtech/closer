@@ -1,0 +1,14 @@
+Name: Article 13
+
+Title: Cross-border operations or operations outside the state of registration
+
+Content:
+1.   When an UAS operator intends to conduct an operation in the ‘specific’ category for which an operational authorisation has already been granted in accordance with Article 12, and which is intended to take place partially or entirely in the airspace of a Member State other than the Member State of registration, the UAS operator shall provide the competent authority of the Member State of intended operation with an application including the following information:
+
+(a)	a copy of the operational authorisation granted to the UAS operator in accordance with Article 12; and
+
+(b)	the location(s) of the intended operation including the updated mitigation measures, if needed, to address those risks identified under Article 11(2)(b) which are specific to the local airspace, terrain and population characteristics and the climatic conditions.
+
+2.   Upon receipt of the application set out in paragraph 1, the competent authority of the Member State of intended operation shall assess it without undue delay and provide the competent authority of the Member State of registration and the UAS operator with a confirmation that the updated mitigation measures referred to in point (b) of paragraph 1 are satisfactory for the operation at the intended location. Upon receipt of that confirmation, the UAS operator may start the intended operation and the Member State of registration shall record the updated mitigation measures that the UAS operator has to apply in the operational authorisation issued in accordance with Article 12.
+
+3.   When an UAS operator intends to conduct an operation in the ‘specific’ category for which a declaration has been made in accordance with paragraph 5 of Article 5, and which is intended to take place partially or entirely in the airspace of a Member State other than the Member State of registration, the UAS operator shall provide the competent authority of the Member State of the intended operation with a copy of the declaration submitted to the Member State of registration, as well as a copy of the confirmation of receipt and completeness.

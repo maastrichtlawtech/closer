@@ -1,0 +1,18 @@
+Name: Article 15
+
+Title: Operational conditions for UAS geographical zones
+
+Content:
+1.   When defining UAS geographical zones for safety, security, privacy or environmental reasons, Member States may:
+
+(a)	prohibit certain or all UAS operations, request particular conditions for certain or all UAS operations or request a prior operational authorisation for certain or all UAS operations;
+
+(b)	subject UAS operations to specified environmental standards;
+
+(c)	allow access to certain UAS classes only;
+
+(d)	allow access only to UAS equipped with certain technical features, in particular remote identification systems or geo awareness systems.
+
+2.   On the basis of a risk assessment carried out by the competent authority, Member States may designate certain geographical zones in which UAS operations are exempt from one or more of the ‘open’ category requirements.
+
+3.   When pursuant to paragraphs 1 or 2 Member States define UAS geographical zones, for geo awareness purposes they shall ensure that the information on the UAS geographical zones, including their period of validity, is made publicly available in a common unique digital format.

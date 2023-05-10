@@ -1,0 +1,24 @@
+Name:Article 5
+
+Title:‘Specific’ category of UAS operations
+
+Content:
+1.   Where one of the requirements laid down in Article 4 or in Part A of the Annex is not met, a UAS operator shall be required to obtain an operational authorisation pursuant to Article 12 from the competent authority in the Member State where it is registered.
+
+2.   When applying to a competent authority for an operational authorisation pursuant Article 12, the operator shall perform a risk assessment in accordance with Article 11 and submit it together with the application, including adequate mitigating measures.
+
+3.   In accordance with point UAS.SPEC.040 laid down in Part B of the Annex, the competent authority shall issue an operational authorisation, if it considers that the operational risks are adequately mitigated in accordance with Article 12.
+
+4.   The competent authority shall specify whether the operational authorisation concerns:
+
+(a)	the approval of a single operation or a number of operations specified in time or location(s) or both. The operational authorisation shall include the associated precise list of mitigating measures;
+
+(b)	the approval of an LUC, in accordance with part C of the Annex.
+
+5.   Where the UAS operator submits a declaration to the competent authority of the Member State of registration in accordance with point UAS.SPEC.020 laid down in Part B of the Annex for an operation complying with a standard scenario as defined in Appendix 1 to that Annex, the UAS operator shall not be required to obtain an operational authorisation in accordance with paragraphs 1 to 4 of this Article and the procedure laid down in paragraph 5 of Article 12 shall apply.
+
+6.   An operational authorisation or a declaration shall not be required for:
+
+(a)	UAS operators holding an LUC with appropriate privileges in accordance with point UAS.LUC.060 of the Annex;
+
+(b)	operations conducted in the framework of model aircraft clubs and associations that have received an authorisation in accordance with Article 16.

@@ -1,0 +1,12 @@
+Name: Article 3
+
+Title: Categories of UAS operations
+
+Content:
+UAS operations shall be performed in the ‘open’, ‘specific’ or ‘certified’ category defined respectively in Articles 4, 5 and 6, subject to the following conditions:
+
+(a)	UAS operations in the ‘open’ category shall not be subject to any prior operational authorisation, nor to an operational declaration by the UAS operator before the operation takes place;
+
+(b)	UAS operations in the ‘specific’ category shall require an operational authorisation issued by the competent authority pursuant to Article 12 or an authorisation received in accordance with Article 16, or, under circumstances defined in Article 5(5), a declaration to be made by a UAS operator;
+
+(c)	UAS operations in the ‘certified’ category shall require the certification of the UAS pursuant to Delegated Regulation (EU) 2019/945 and the certification of the operator and, where applicable, the licensing of the remote pilot.

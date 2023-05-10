@@ -1,0 +1,36 @@
+Name: Article 18
+
+Title: Tasks of the competent authority
+
+Content:
+The competent authority shall be responsible for:
+
+(a)	enforcing this Regulation;
+
+(b)	issuing, suspending or revoking certificates of UAS operators and licenses of remote pilots operating within the ‘certified’ category of UAS operations;
+
+(c)	issuing remote pilots with a proof of completion of an online theoretical knowledge examination according to points UAS.OPEN.020 and UAS.OPEN.040 of the Annex and issuing, amending, suspending, limiting or revoking certificates of competency of remote pilots according to point UAS.OPEN.030 of the Annex;
+
+(d)	issuing, amending, suspending, limiting or revoking operational authorisations and LUCs and verifying completeness of declarations, which are required to carry out UAS operations in the ‘specific’ category of UAS operations;
+
+(e)	keeping documents, records and reports concerning UAS operational authorisations, declarations, certificates of competency of the remote pilots and LUCs;
+
+(f)	making available in a common unique digital format information on UAS geographical zones identified by the Member States and established within the national airspace of its State;
+
+(g)	issuing a confirmation of receipt and completeness in accordance with Article 12(5)(b) or a confirmation in accordance with paragraph 2 of Article 13;
+
+(h)	developing a risk-based oversight system for:
+
+i.	UAS operators that have submitted a declaration or hold an operational authorisation or an LUC;
+
+ii.	model clubs and associations that hold an authorisation referred to in Article 16;
+
+(i)	for operations other than those in the ‘open’ category, establishing audit planning based on the risk profile, compliance level and the safety performance of UAS operators who have submitted a declaration, or hold a certificate issued by the competent authority;
+
+(j)	for operations other than those in the ‘open’ category, carrying out inspections with regard to UAS operators who have submitted a declaration or hold a certificate issued by the competent authority inspecting UAS and ensuring that UAS operators and remote pilots comply with this Regulation;
+
+(k)	implementing a system to detect and examine incidents of non-compliance by UAS operators operating in the ‘open’ or ‘specific’ categories and reported in accordance with paragraph 2 of Article 19;
+
+(l)	providing UAS operators with information and guidance that promotes the safety of UAS operations;
+
+(m)	establishing and maintaining registration systems for UAS whose design is subject to certification and for UAS operators whose operation may present a risk to safety, security, privacy, and protection of personal data or the environment.§±
