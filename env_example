@@ -1,0 +1,3 @@
+GCUBE_TOKEN=""
+OPENAI_API_KEY=""
+prompt_path="prompts/"
