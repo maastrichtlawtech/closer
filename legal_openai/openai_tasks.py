@@ -47,9 +47,10 @@ class OpenaiTask:
 
     def execute_task(self, article=None, prompt=None):
         if article is None:
-            raise ValueError("Please provide an article number to extract quantities from.")
+            raise ValueError("Please provide an article number to extract from.")
         index = load_index_from_storage(storage_context=StorageContext.from_defaults(
-            persist_dir=self.base_storage_path + '/' + article + '/'), llm_predictor=self.llm_predictor)
+            persist_dir=self.base_storage_path + '/' + article + '/'),
+            llm_predictor=self.llm_predictor)
         query_engine = index.as_query_engine()
         full_response = ''
         while True:
@@ -58,5 +59,4 @@ class OpenaiTask:
                 full_response += (" "+ resp.response)
             else:
                 break
-        return full_response 
-
+        return full_response
