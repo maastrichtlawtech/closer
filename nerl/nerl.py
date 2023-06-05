@@ -29,7 +29,6 @@ class EntityRecognizer:
         for index, entity_element in enumerate(doc._.linkedEntities):
             entity_uri[entity_element.label] = entity_element.url
         return entity_uri
-        #return [(ent.text, ent.label_) for ent in doc.ents]
 
     def tsv_to_dict(self, tsv_file):
         eurovoc_dict = {}
