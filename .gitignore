@@ -162,3 +162,5 @@ cython_debug/
 # Other bespoke files
 storage/
 .DS_Store
+__init__.py
+input/*/
