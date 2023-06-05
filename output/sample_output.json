@@ -1,0 +1,87 @@
+{
+    "document_data": {
+        "uri": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32019R0947&from=EN",
+        "sections": {
+            "chapters": [],
+            "articles": [
+                {
+                    "id": "1",
+                    "text": "Title: Article 8\n\nName: Rules and procedures for the competency of remote pilots\n\nContent:\n1.   Remote pilots operating UAS in the ‘open’ category shall comply with the competency requirements set in Part A of the Annex.\n\n2.   Remote pilots operating UAS in the ‘specific’ category shall comply with the competency requirements set out in the operational authorisation by the competent authority or in the standard scenario defined in Appendix 1 to the Annex or as defined by the LUC and shall have at least the following competencies:\n\n(a) ability to apply operational procedures (normal, contingency and emergency procedures, flight planning, pre-flight and post-flight inspections);\n\n(b) ability to manage aeronautical communication;\n\n(c) manage the unmanned aircraft flight path and automation;\n\n(d) leadership, teamwork and self-management;\n\n(e) problem solving and decision-making;\n\n(f) situational awareness;\n\n(g) workload management;\n\n(h) coordination or handover, as applicable.\n\n3.   Remote pilots operating in the framework of model aircraft clubs or associations shall comply with the minimum competency requirements defined in the authorisation granted in accordance with Article 16.\n",
+                    "uri": "",
+                    "sentences": [
+                        {
+                            "text": "Title: Article 8\n\nName: Rules and procedures for the competency of remote pilots\n\nContent:\n1.",
+                            "sentence_rule": "obligation",
+                            "obligation": "Remote pilots operating UAS in the ‘open’ category shall comply with the competency requirements set in Part A of the Annex",
+                            "obligation_holder": "Remote pilots",
+                            "right_holder": "Competent authority",
+                            "permission": "None",
+                            "prohibition": "None",
+                            "bearer": "None",
+                            "omission": "None",
+                            "concepts": [
+                                {
+                                    "Title": "https://www.wikidata.org/wiki/Q18341896"
+                                },
+                                {
+                                    "article": "https://www.wikidata.org/wiki/Q103184"
+                                },
+                                {
+                                    "Name": "https://www.wikidata.org/wiki/Q6961497"
+                                },
+                                {
+                                    "Rules": "https://www.wikidata.org/wiki/Q7379004"
+                                },
+                                {
+                                    "subroutine": "https://www.wikidata.org/wiki/Q190686"
+                                },
+                                {
+                                    "competence": "https://www.wikidata.org/wiki/Q2015382"
+                                },
+                                {
+                                    "television pilot": "https://www.wikidata.org/wiki/Q653916"
+                                }
+                            ],
+                            "references": [
+                                {
+                                    "reference": "Part A of the Annex",
+                                    "count": 1,
+                                    "same_document": "True",
+                                    "celex": ""
+                                },
+                                {
+                                    "reference": "Appendix 1 to the Annex",
+                                    "count": "1",
+                                    "same_document": "True",
+                                    "celex": ""
+                                },
+                                {
+                                    "reference": "Article 16",
+                                    "count": "1",
+                                    "same_document": "True",
+                                    "celex": ""
+                                }
+                            ],
+                            "quantity": [],
+                            "if_then": [
+                                "If remote pilots are operating UAS in the ‘open’ category then they shall comply with the competency requirements set in Part A of the Annex",
+                                "If remote pilots are operating UAS in the ‘specific’ category then they shall comply with the competency requirements set out in the operational authorisation by the competent authority or in the standard scenario defined in Appendix 1 to the Annex or as defined by the LUC and shall have at least the following competencies",
+                                "If remote pilots are operating in the framework of model aircraft clubs or associations then they shall comply with the minimum competency requirements defined in the authorisation granted in accordance with Article 16"
+                            ],
+                            "describe_if_then": [
+                                {
+                                    "IF": "Remote pilots operating UAS in the ‘open’ category",
+                                    "THEN": "shall comply with the competency requirements set in Part A of the Annex"
+                                },
+                                {
+                                    "IF": "Remote pilots operating UAS in the ‘specific’ category",
+                                    "THEN": "shall comply with the competency requirements set out in the operational authorisation by the competent authority or in the standard scenario defined in Appendix 1 to the Annex or as defined by the LUC and shall have at least the following competencies: (a) ability to apply operational procedures (normal, contingency and emergency procedures, flight planning, pre-flight and post-flight inspections); (b) ability to manage aeronautical communication; (c) manage the unmanned aircraft flight path and automation; (d) leadership, teamwork and self-management; (e) problem solving and decision-making; (f) situational awareness; (g) workload management; (h) coordination or handover, as applicable"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
