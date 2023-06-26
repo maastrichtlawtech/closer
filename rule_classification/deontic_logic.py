@@ -1,4 +1,3 @@
-import ast
 import os
 import re
 
@@ -39,18 +38,18 @@ class DeonticLogic:
                 classify_deontic_logic_prompt = f.read()
             response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                 article=article, prompt=if_then_prompt)
-            for resp in ast.literal_eval(response):
+            for resp in response:
                 final_response = {}
                 if resp is not None:
                     final_response['if_then_rule'] = resp
                     prompt = re.sub("<IF_THEN_RULE>", resp, describe_if_then_prompt)
                     response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                         article=article, prompt=prompt)
-                    final_response['conditions'] = ast.literal_eval(response)
+                    final_response['conditions'] = response
                     prompt = re.sub("<IF_THEN_RULE>", resp, classify_deontic_logic_prompt)
                     response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                         article=article, prompt=prompt)
-                    final_response['classification'] = ast.literal_eval(response)
+                    final_response['classification'] = response
                     reponse_list.append(final_response)
         return reponse_list
 
@@ -62,7 +61,7 @@ class DeonticLogic:
             if_then_prompt = re.sub("<IF_THEN_RULE>", text, if_then_prompt)
             response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                 article=article, prompt=if_then_prompt)
-            return ast.literal_eval(response)
+            return response
 
     def openai_if_then_describe(self, model_name='text-davinci-003', temperature=0,
                             top_p=1, api_key=None, prompt=None, article=None, text=None):
@@ -72,7 +71,7 @@ class DeonticLogic:
             describe_if_then_prompt = re.sub("<IF_THEN_RULE>", text, describe_if_then_prompt)
             response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                 article=article, prompt=describe_if_then_prompt)
-            return ast.literal_eval(response)
+            return response
 
     def openai_classifier_logic_only(self, model_name='text-davinci-003', temperature=0,
                           top_p=1, api_key=None, prompt=None, article=None, text=None):
@@ -82,4 +81,4 @@ class DeonticLogic:
             classify_deontic_logic_prompt = re.sub("<IF_THEN_RULE>", text, classify_deontic_logic_prompt)
             response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                 article=article, prompt=classify_deontic_logic_prompt)
-            return ast.literal_eval(response)
+            return response
