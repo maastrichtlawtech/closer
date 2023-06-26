@@ -1,5 +1,7 @@
+import ast
 import os
 
+import openai
 from langchain import OpenAI
 from llama_index import (GPTVectorStoreIndex, LLMPredictor, PromptHelper,
                          ServiceContext, SimpleDirectoryReader, StorageContext,
@@ -16,22 +18,58 @@ class OpenaiTask:
         self.top_p = top_p
         self.temperature = temperature
         self.index_type = index_type
-        self.max_input_size = 4096
-        self.num_output = 100
-        self.max_chunk_overlap = 20
-        self.chunk_size_limit = 600
+        self.max_input_size = 3000 
+        self.num_output = 1000
+        self.max_chunk_overlap = 0.1
+        self.chunk_size_limit = 512 
         self.llm_predictor = LLMPredictor(llm=OpenAI(temperature=self.temperature,
                                                     model_name=self.model_name,
-                                                    top_p=self.top_p,
+                                                    top_p=self.top_p
                                                     ))
-        self.prompt_helper = PromptHelper(self.max_input_size, self.num_output,
-                                          self.max_chunk_overlap,
-                                          chunk_size_limit=self.chunk_size_limit)
+        '''
+        self.prompt_helper = PromptHelper(context_window=self.max_input_size,
+                                         chunk_overlap_ratio=self.max_chunk_overlap,
+                                         chunk_size_limit=self.chunk_size_limit,
+                                          num_output=self.num_output)
+        self.service_context = ServiceContext.from_defaults(llm_predictor=self.llm_predictor,
+                                                            prompt_helper=self.prompt_helper,
+                                                           chunk_size_limit=self.chunk_size_limit)
+        '''
+        self.prompt_helper = PromptHelper()
         self.service_context = ServiceContext.from_defaults(llm_predictor=self.llm_predictor,
                                                             prompt_helper=self.prompt_helper)
         self.base_storage_path = os.path.join(self.path, 'storage')
+        if api_key is None:
+            openai.api_key = os.getenv('OPENAI_API_KEY')
+        else:
+            openai.api_key = api_key
+        print(f"{self.path, self.base_storage_path}")
         self.load_indices()
         print("Loaded indices")
+
+    def eval_brokenliteral(self, value_obj, default_value=None, print_error=True):
+        # https://stackoverflow.com/questions/75503925/how-to-extract-incomplete-python-objects-from-string
+        try:
+            return ast.literal_eval(value_obj)
+        except SyntaxError as se:
+            eval_error = se
+            bracket_pairs = {'{': '}', '[': ']'}
+            closers, cur_closer = [], ''
+            for c in ''.join(value_obj.split()):
+                if c not in bracket_pairs:
+                    break
+                cur_closer = bracket_pairs[c] + cur_closer
+                closers.append(cur_closer)
+            for closer in closers:
+                sub_str = value_obj.strip()
+                while sub_str[1:]:
+                    try:
+                        return ast.literal_eval(sub_str + closer)
+                    except SyntaxError:
+                        sub_str = sub_str[:-1].strip()
+            if print_error:
+                print(f"Error: {repr(eval_error)}")
+            return default_value
 
     def load_indices(self):
         for filename in os.listdir(self.path):
@@ -50,7 +88,7 @@ class OpenaiTask:
             raise ValueError("Please provide an article number to extract from.")
         index = load_index_from_storage(storage_context=StorageContext.from_defaults(
             persist_dir=self.base_storage_path + '/' + article + '/'),
-            llm_predictor=self.llm_predictor)
+            service_context=self.service_context)
         query_engine = index.as_query_engine()
         full_response = ''
         while True:
@@ -59,4 +97,5 @@ class OpenaiTask:
                 full_response += (" "+ resp.response)
             else:
                 break
-        return full_response
+        print(full_response)
+        return self.eval_brokenliteral(full_response)
