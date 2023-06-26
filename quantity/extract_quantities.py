@@ -9,7 +9,7 @@ prompt_path = os.getenv('PROMPT_PATH')
 
 class QuantitiesExtractor:
     def __init__(self):
-        pass
+        self.prompt_path = prompt_path
 
     def quantulum_extract(self, text):
         quants = parser.parse(text)
@@ -23,7 +23,7 @@ class QuantitiesExtractor:
 
     def openai_extract(self, prompt=None, article=None, path=None, api_key=None):
         if prompt is None:
-            with open(prompt_path + 'quantity.txt', 'r') as f:
+            with open(self.prompt_path + 'quantity.txt', 'r') as f:
                 prompt = f.read()
         return OpenaiTask(path=path, api_key=api_key).execute_task(
             prompt=prompt, article=article)
