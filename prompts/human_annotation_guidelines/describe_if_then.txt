@@ -1,0 +1,22 @@
+For this input text:
+'''
+<IF_THEN_RULE>
+'''
+Identify the antecedent (IF) and the consequent (THEN). Include words like 'shall'. If there are multiple IFs or THENs, identify each separately. ]\Return the results in the following format:
+'''
+{
+	{
+		'IF': {
+			'text': 'antecedent',
+			'start_offset': 'starting position of antecedent',
+			'end_offset': 'ending position of antecedent'
+		 },
+		'THEN': {
+			'text': 'consequent',
+			'start_offset': 'starting position of consequent',
+			'end_offset': 'ending position of consequent'
+		 }
+	},
+	...
+}
+'''

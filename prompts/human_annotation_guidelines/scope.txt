@@ -1,0 +1,14 @@
+Identify the scope of the text. Legal statements that determine whether a rule is applicable, under which circumstances the rule is applicable, when it is applicable, or the extent to which it is applicable, is defined as scope.
+If none is identified, return the result as None. Otherwise, return the results in the following format:
+'''
+{
+	'scope': [
+		{
+		 	'text': 'scope text',
+			'start_offset': 'starting position of the scope text',
+			'end_offset': 'ending position of the scope text'
+		},
+		...
+	]
+}
+'''

@@ -1,0 +1,33 @@
+Identify all IF-THEN rules. An IF-THEN statement represents a logical relationship between a condition and a desired action or outcome. The IF is the condition or requirement that needs to be met in order to get the consequence THEN. Identify the whole text that concerns the IF-THEN statement.
+A definition can also be an IF-THEN statement.
+A scope can also be an IF-THEN statement.
+Multiple IF-THEN statements can be identified where the THEN of one statement is the IF of another IF-THEN statement.
+No IF-THEN statement should be found if the statement does not present a conditional relationship or logical implication,
+A definition term does not need to be included in the IF-THEN statement.
+Identify the antecedent (IF) and consequent (THEN) of the IF-THEN statement. Include words like 'shall'. If there are multiple IFs or THENs, identify each separately.
+If none is identified, return result as None. Otherwise, return the results in the following format:
+```
+{
+    "IF-THEN":[{
+	'text': 'if then statement',
+	'if-then-statements':
+	[
+		{
+			'IF': {
+				'text': 'if statement',
+				'start_offset': 'starting position of the if statement',
+				'end_offset': 'ending position of the if statement'
+			},
+			'THEN': {
+				'text': 'then statement',
+				'start_offset': 'starting position of the then statement',
+				'end_offset': 'ending position of the then statement'
+			}
+		},
+		...
+	]
+    },
+   ...
+    ]
+}
+```

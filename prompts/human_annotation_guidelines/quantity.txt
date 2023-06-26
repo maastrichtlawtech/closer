@@ -1,0 +1,21 @@
+Identify any numerical or quantitative information that appears in the text. This includes measurements, amounts, percentages, ratios, number of items, and ay other information that can be expressed numerically. For identifying quantities, both the numerical value and unit of measurement needs to be identified, if applicable. For example, if the text refers to a distance, both the number of units (e.g. meters, kilometers, miles) and quantity (e.g. 10km) neede to be identified.
+A date is not a quantity.
+If none is identified, return None as result. Otherwise, return the results in the following format:
+```
+{
+  "quantities": [
+    {
+      "value": "10",
+      "unit": "km",
+	"start_offset": 'starting position of the quantity in the text',
+	"end_offset": 'ending position of the quantity in the text'
+    },
+    {
+      "value": "5",
+      "unit": "m",
+	"start_offset": 'starting position of the quantity in the text',
+	"end_offset": 'ending position of the quantity in the text'
+    }
+  ]
+}
+```

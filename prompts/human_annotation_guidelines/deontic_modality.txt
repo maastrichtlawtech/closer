@@ -1,0 +1,157 @@
+Identify the following:
+1. Power: A power refers to the ability or authority to impose obligations, permissions, or prohibitions on others. The difference with the other modalities below lies in the possibility to create norms.
+2. Right: A right grants a person an inherent entitlement to perform or demand certain actions, inactions, or behaviors from others without interference. Contrary to permissions, an inherent entitlement refers to a fundamental right or claim that a person possesses by virtue of their status or existence. A right suggests that the entitlement is inherent to an individual's nature or position and does not depend on external factors or conditions. Inherent entitlements are often considered universal and inalienable, meaning they cannot be taken away or revoked. Protection from interference concerns safeguarding an individual's rights or interests. Invoking the right prevents or prohibits others from interfering with it.
+3. Obligation: An obligation is an action or inaction that is permissible and non-optional.
+4. Permission: A permission is an action that is permissible and optional. A permission grants a freedom that can be revoked or restricted at will (as opposed to rights).
+5. Prohibition: A prohibition is an action or inaction that is not permissible. A prohibition is not optional.
+6. Omission: An omission is an inaction that is permitted and optional.
+In case it is one of the modalities above, identify all the Norm Addressees and Beneficiaries. Do not include articles such as 'the' or 'a'. A Norm Addressee is the person or entity to whom the norm is directed. A Beneficiary is a person, group of persons, or entity that is the recipient or object  of the power/right/obligation/permission/prohibition/omission.
+If none is identified, return result as None. Otherwise, return the results in the following format:
+```
+{
+  "power": [
+	{
+	 	'text': 'power 1',
+		'start_offset': 'starting position of power 1',
+		'end_offset': 'ending position of power 1',
+		'norm_addressee': [
+			{
+				'text': 'norm addressee 1',
+				'start_offset': 'starting position of norm addressee 1',
+				'end_offset': 'ending position of norm addressee 1'
+			},
+			...
+		],
+		'beneficiary': [
+			{
+				'text': 'beneficiary 1',
+				'start_offset': 'starting position of beneficiary 1',
+				'end_offset': 'ending position of beneficiary 1'
+			},
+			...
+		]
+	},
+    ...
+  ],
+  "right": [
+	{
+		'text': 'right 1',
+		'start_offset': 'starting position of right 1',
+		'end_offset': 'ending position of right 1',
+		'norm_addressee': [
+			{
+				'text': 'norm addressee 1',
+				'start_offset': 'starting position of norm addressee 1',
+				'end_offset': 'ending position of norm addressee 1'
+			},
+			...
+		],
+		'beneficiary': [
+			{
+				'text': 'beneficiary 1',
+				'start_offset': 'starting position of beneficiary 1',
+				'end_offset': 'ending position of beneficiary 1'
+			},
+			...
+		]
+	},
+    ...
+  ],
+  "obligation": [
+	{
+		'text': 'obligation 1',
+		'start_offset': 'starting position of obligation 1',
+		'end_offset': 'ending position of obligation 1',
+		'norm_addressee': [
+			{
+				'text': 'norm addressee 1',
+				'start_offset': 'starting position of norm addressee 1',
+				'end_offset': 'ending position of norm addressee 1'
+			},
+			...
+		],
+		'beneficiary': [
+			{
+				'text': 'beneficiary 1',
+				'start_offset': 'starting position of beneficiary 1',
+				'end_offset': 'ending position of beneficiary 1'
+			},
+			...
+		]
+	},
+    ...
+  ],
+  "permission": [
+	{
+		'text': 'permission 1',
+		'start_offset': 'starting position of permission 1',
+		'end_offset': 'ending position of permission 1',
+		'norm_addressee': [
+			{
+				'text': 'norm addressee 1',
+				'start_offset': 'starting position of norm addressee 1',
+				'end_offset': 'ending position of norm addressee 1'
+			},
+			...
+		],
+		'beneficiary': [
+			{
+				'text': 'beneficiary 1',
+				'start_offset': 'starting position of beneficiary 1',
+				'end_offset': 'ending position of beneficiary 1'
+			},
+			...
+		]
+	},
+    ...
+  ],
+  "prohibition": [
+	{
+		'text': 'prohibition 1',
+		'start_offset': 'starting position of prohibition 1',
+		'end_offset': 'ending position of prohibition 1',
+		'norm_addressee': [
+			{
+				'text': 'norm addressee 1',
+				'start_offset': 'starting position of norm addressee 1',
+				'end_offset': 'ending position of norm addressee 1'
+			},
+			...
+		],
+		'beneficiary': [
+			{
+				'text': 'beneficiary 1',
+				'start_offset': 'starting position of beneficiary 1',
+				'end_offset': 'ending position of beneficiary 1'
+			},
+			...
+		]
+	},
+    ...
+  ],
+  "omission": [
+	{
+		'text': 'omission 1',
+		'start_offset': 'starting position of omission 1',
+		'end_offset': 'ending position of omission 1',
+		'norm_addressee': [
+			{
+				'text': 'norm addressee 1',
+				'start_offset': 'starting position of norm addressee 1',
+				'end_offset': 'ending position of norm addressee 1'
+			},
+			...
+		],
+		'beneficiary': [
+			{
+				'text': 'beneficiary 1',
+				'start_offset': 'starting position of beneficiary 1',
+				'end_offset': 'ending position of beneficiary 1'
+			},
+			...
+		]
+	},
+    ...
+  ]
+}
+```

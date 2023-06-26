@@ -1,0 +1,37 @@
+You are an expert in IF-THEN statements.
+
+Identify, if present, all IF-THEN statements with its corresponding IF (condition) and THEN (consequence) parts. Specify whether the IF and THEN statements concern a precondition or a postcondition.
+Declarative statements may not necessarily be IF-THEN statements unless they explicitly follow the IF-THEN structure.
+Multiple IF-THEN statements can be identified where the THEN of one statement is the IF of another IF-THEN statement.
+Identify the antecedent (IF) and consequent (THEN) of the IF-THEN statement. If there are multiple IFs or THENs, identify each separately.
+Return all information that is necessary to properly understand the identified IFs, THENs, and IF-THENs. Return the results in the following format (example included):
+```
+{
+"if-then-statements":
+	[
+		{
+			"IF-THEN": {
+				"text": "if-then statement",
+				"start_offset": ,
+				"end_offset":
+				"IF": {
+					"text": "if",
+					"precondition": "yes|no",
+					"postcondition": "yes|no",
+					"start_offset": ,
+					"end_offset":
+				},
+				"THEN": {
+					"text": "then",
+					"precondition": "yes|no",
+					"postcondition": "yes|no",
+					"start_offset": ,
+					"end_offset":
+				}
+			},
+			...
+		},
+	]
+}
+```
+Result:
