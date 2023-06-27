@@ -13,24 +13,17 @@ Identify the whole text following or preceding the definition term if the term a
 If none is identified, return result as None. Otherwise, return the results in the following format:
 ```
 {
-    "definition": {
-	"definition_term": {
-		"term": "term",
-		"start_offset": "starting position of the term in the text",
-		"end_offset": "ending position of the term in the text",
+    "definition": [
+	{
+		"definition_term": "term",
+		"definition_text": "text",
+		"relationship": "is-a|part-of|is-not|reference",
+		"reference": {
+			"text": "reference_text",
+			"relationship": "is-a|part-of|is-not"
+		}
 	},
-	"definition_text": {
-		"text": "definition_text",
-		"start_offset": "starting position of the definition text in the text",
-		"end_offset": "ending position of the definition text in the text",
-	},
-	"relationship": "is-a|part-of|is-not|reference",
-	"reference": {
-		"text": "reference_text",
-		"start_offset": "starting position of the reference text in the text",
-		"end_offset": "ending position of the reference text in the text",
-		"relationship": "is-a|part-of|is-not"
-	}
-     },
+	...
+     ]
 }
 ```
