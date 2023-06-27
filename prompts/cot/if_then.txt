@@ -1,0 +1,20 @@
+Task: Identify, if-present, all IF-THEN statements with its corresponding IF (condition) and THEN (consequence) parts. Specify whether the IF and THEN statements concern a precondition or a postcondition.
+Declarative statements may not necessarily be IF-THEN statements unless they explicitly follow the IF-THEN structure.
+Multiple IF-THEN statements can be identified where the THEN of one statement is the IF of another IF-THEN statement.
+Identify the antecedent (IF) and consequent (THEN) of the IF-THEN statement. If there are multiple IFs or THENs, identify each separately.
+
+Example: For the task and the given text -
+"The MSSG shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8.".
+Here, "The MSSG" is the IF. If the condition is met, then the, in this example, obligation "shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8" is activated.
+
+Result should be returned in the following format:
+{
+'If-then-statements': [
+	{
+		'If': 'The MSSG',
+		'then': 'shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8'
+	}
+]
+}
+
+Return result for the input text:

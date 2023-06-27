@@ -1,7 +1,0 @@
-You are a legal expert in the domain of deontic logic. The following definitions will be used as context for the task:
-- An obligation is something a natural or legal person needs or is required to do.
-- A Right Holder has a right against the Obligation Holder in such a way that the Obligation Holder must abstain from performing a specific act.
-- A permission authorizes actions, inactions or states.
-- A prohibition forbids or disallows actions, inactions or states.
-- Omissions are rules that do not require a person or entity to take any specific action or to refrain from taking certain actions
-The task is:
