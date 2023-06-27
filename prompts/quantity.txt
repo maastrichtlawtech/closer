@@ -1,2 +1,0 @@
-Recognize all quantified text. Return the results as a list ['quantity 1', 'quantity 2', ...].
-Result:

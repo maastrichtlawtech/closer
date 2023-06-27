@@ -1,2 +1,0 @@
-Recognize all wikidata entities with its URI. Return the results in the following format: [{'entity': 'entity', 'uri': 'uri'}, ...].
-Result:

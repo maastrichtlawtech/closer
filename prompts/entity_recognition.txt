@@ -1,2 +1,0 @@
-Recognise all named entities in the input text. The result must always be returned in the following format: {'entity':'entity uri', ...}. For example, if the input text is "I live in London and work for IBM", the result must be: {'London':'http://dbpedia.org/resource/London', 'IBM':'http://dbpedia.org/resource/IBM'}.
-Result:

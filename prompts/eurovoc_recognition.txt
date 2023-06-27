@@ -1,2 +1,0 @@
-Recognize all eurovoc terms. Return the results in the following format: {'eurovoc_terms': ['term1', 'term2', ...]}.
-Result:
