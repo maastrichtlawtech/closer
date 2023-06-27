@@ -1,2 +1,15 @@
-A reference is mentions or points to a document (eg Regulation, Directive) or parts of a document (eg Article, Annex, Appendix). Recognize all references and keep count of each reference. For each reference, indicate whether the reference to is - a part of the same document or to another document. If another document is referred, indicate the CELEX number of that document if known, if not keep empty. Return the results in the following format: [{'reference': 'reference', 'count': 1, 'same_document':False, 'celex': '31992L0043'}, ...].
+A reference is mentions or points to a document (eg Regulation, Directive) or parts of a document (eg Article, Annex, Appendix). Recognize all references and keep count of each reference. For each reference, indicate whether the reference to is - a part of the same document or to another document. If another document is referred, indicate the CELEX number of that document if known, if not keep empty. Return the results in the following format:
+```
+{
+	"reference": [
+		{
+			"text": "reference text",
+			"count": 1,
+			"same_document": False,
+			"celex": "31992L0043"
+		},
+		...
+	]
+}
+```
 Result:
