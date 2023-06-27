@@ -1,2 +1,13 @@
-Recognize all quantified text. Return the results as a list ['quantity 1', 'quantity 2', ...].
+Recognize all quantified text. Return the results in the following format:
+```
+{
+  "quantities": [
+    {
+      "value": "10",
+      "unit": "km"
+    },
+    ...
+  ]
+}
+```
 Result:
