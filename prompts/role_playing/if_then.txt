@@ -10,27 +10,10 @@ Return all information that is necessary to properly understand the identified I
 "if-then-statements":
 	[
 		{
-			"IF-THEN": {
-				"text": "if-then statement",
-				"start_offset": ,
-				"end_offset":
-				"IF": {
-					"text": "if",
-					"precondition": "yes|no",
-					"postcondition": "yes|no",
-					"start_offset": ,
-					"end_offset":
-				},
-				"THEN": {
-					"text": "then",
-					"precondition": "yes|no",
-					"postcondition": "yes|no",
-					"start_offset": ,
-					"end_offset":
-				}
-			},
-			...
+			'if': 'IF statement',
+		 	'then': 'THEN statement'
 		},
+		...
 	]
 }
 ```
