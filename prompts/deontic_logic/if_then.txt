@@ -1,1 +1,0 @@
-Extract all IF-THEN rules and return the result in the following format: ['if then rule 1', 'if then rule 2', ...]

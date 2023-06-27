@@ -1,5 +1,0 @@
-For this input text:
-'''
-<IF_THEN_RULE>
-'''
-Describe the antecedent (IF) and the consequent (THEN). Return the results in the following format: [{'IF': 'antecedent', 'THEN': 'consequent'}, ...]
