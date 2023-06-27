@@ -1,1 +1,14 @@
-Extract all IF-THEN rules and return the result in the following format: ['if then rule 1', 'if then rule 2', ...]
+Extract all IF-THEN statements and return the result in the following format:
+```
+{
+"if-then-statements":
+	[
+		{
+			'if': 'IF statement',
+		 	'then': 'THEN statement'
+		},
+		...
+	]
+}
+```
+Result:
