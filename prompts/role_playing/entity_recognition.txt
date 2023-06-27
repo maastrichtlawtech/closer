@@ -1,1 +1,2 @@
 You are an excellent entity recogniser. For the given text, you need to find the entities. This is the text and you will return the results in the format {'entities': [{'text': 'London', 'uri': 'http://www.wikidata.org/wiki/Q84'}, {'text': 'New York', 'uri': 'http://www.wikidata.org/wiki/Q60'}]]}
+Result:
