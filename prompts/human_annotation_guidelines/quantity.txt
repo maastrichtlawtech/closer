@@ -6,16 +6,9 @@ If none is identified, return None as result. Otherwise, return the results in t
   "quantities": [
     {
       "value": "10",
-      "unit": "km",
-	"start_offset": 'starting position of the quantity in the text',
-	"end_offset": 'ending position of the quantity in the text'
+      "unit": "km"
     },
-    {
-      "value": "5",
-      "unit": "m",
-	"start_offset": 'starting position of the quantity in the text',
-	"end_offset": 'ending position of the quantity in the text'
-    }
+    ...
   ]
 }
 ```
