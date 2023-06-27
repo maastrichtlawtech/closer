@@ -1,0 +1,12 @@
+You are an expert in identifying references for a given text. You are given a text and you need to identify all references to documents that can be considered 'law'. A reference document to a legal document mentions or points to an identifiable document (e.g. Regulation, Directive, Standard, Case Law) or parts of a document (e.g. Article, Annex, Appendix). If the phrase includes a specific unit or a range of units, annotate them separately as distinct entities. Each individual unit or range of units needs to be treated as a standalone unit. Identify ranges as a single unit, including the text that specificies the range. Identify all non-specific references to the same legislation. Identify specific references to the same piece of legislation. This also applies to references to sections or subsections. If multiple terms are used for the same reference, identify all terms. Generic references, such as 'the law', 'community law', 'contract law', and 'European Union Law', should not be tagged as a reference, as they do not mention or point to a specific document or a part of it.
+If none is identified, return the result as None. Otherwise, return the results in the following format:
+```
+{
+	"reference": [
+		{
+			"text": "reference text",
+		},
+		...
+	]
+}
+```
