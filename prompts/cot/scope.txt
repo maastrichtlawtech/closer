@@ -1,0 +1,21 @@
+Task: Identify the scope of the text. Legal statements that determine whether a rule is applicable, under which circumstances the rule is applicable, when it is applicable, or the extent to which it is applicable, is defined as scope.
+
+Example: For the task and the text - "This Directive shall apply to unfair business-to-consumer commercial practices, as laid down in Article 5, before, during, and after a commercial transaction in relation to a product.” In this example, the applicability of the Directive to unfair business-to-consumer commercial practices is a personal scope, with ‘before, during, and after’ being a temporal scope.
+
+Return the results in the following format:
+{
+	'scope': [
+		{
+		 	'text': 'This Directive shall apply to unfair business-to-consumer commercial practices',
+			'scope_type': 'personal'
+		},
+		{
+			'text': 'before, during, and after',
+			'scope_type': 'temporal'
+		}
+	]
+}
+
+If no results are identified, return None.
+
+Return the result for the input text:

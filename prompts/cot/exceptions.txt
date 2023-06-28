@@ -1,0 +1,15 @@
+Task: Identify all exceptions. An exception is a statement that is made to allow certain things to be done or certain circumstances to exist that would normally or otherwise be forbidden or disallowed. An exception can be regarded as a negative condition which, if satisfied, means the norm does not come into force.
+
+Example: For the task and the given text -
+"The Commission shall not adopt a decision pursuant to Article 17(1) of the Treaty unless it has given the parties concerned the opportunity to be heard." In this example, ‘it has given the parties concerned the opportunity to be heard’ highlights a deviation from ‘The Commission shall not adopt a decision pursuant to Article 17(1) of the Treaty’ that results in the norm (‘shall’ not adopt’) not being applied.
+
+If none is identified, return None as result. Result should be returned in the following format:
+{
+	"exceptions":[
+		{
+		"exception": "it has given the parties concerned the opportunity to be heard"
+		}
+	]
+}
+
+Return result for the input text:

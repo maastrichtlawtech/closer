@@ -1,0 +1,44 @@
+Task: Identify the following for all the (sub)sentences by keeping the parent sentence also in context:
+1. Power: A power refers to the ability or authority to impose obligations, permissions, or prohibitions on others. The difference with the other modalities below lies in the possibility to create norms.
+2. Right: A right grants a person an inherent entitlement to perform or demand certain actions, inactions, or behaviors from others without interference. Contrary to permissions, an inherent entitlement refers to a fundamental right or claim that a person possesses by virtue of their status or existence. A right suggests that the entitlement is inherent to an individual"s nature or position and does not depend on external factors or conditions. Inherent entitlements are often considered universal and inalienable, meaning they cannot be taken away or revoked. Protection from interference concerns safeguarding an individual"s rights or interests. Invoking the right prevents or prohibits others from interfering with it.
+3. Obligation: An obligation is an action or inaction that is permissible and non-optional.
+4. Permission: A permission is an action that is permissible and optional. A permission grants a freedom that can be revoked or restricted at will (as opposed to rights).
+5. Prohibition: A prohibition is an action or inaction that is not permissible. A prohibition is not optional.
+6. Omission: An omission is an inaction that is permitted and optional.
+The six categories are mutually exclusive.
+
+In case it is one of the modalities above, identify all the Norm Addressees and Beneficiaries. Do not include articles such as "the" or "a". A Norm Addressee is the person or entity to whom the norm is directed. A Beneficiary is a person, group of persons, or entity that is the recipient or object  of the power/right/obligation/permission/prohibition/omission.
+
+Example for 'power': "Member States may adopt measures to limit access to certain public events, places or facilities to persons who have been vaccinated, have recovered from COVID-19, or have tested negative for COVID-19." In this example, the power consists of the authority of adopting measures, which may result in the creation of obligations, prohibitions, permissions, or omissions.
+
+Example for 'power': “The provisions of Article 14 shall be implemented by the specialist services.” The provision gives the ability or authority to impose obligations etc. on others (through implementing the provisions).
+
+Example for 'prohibition': “(...) the trader shall not be liable for any lack of conformity (...)”. The provision is a right, as it grants a trader the inherent entitlement to demand inactions (i.e. to not hold the trader liable) without interference. It lacks an action or inaction as well as a norm addressee, making the provision less likely to be a prohibition.
+
+Example for 'permission': "Certain circumstances allow EU citizens to work in another EU country without a work permit or residency permit." In this example, the entitlement to work in another EU country - an action - is dependent on external conditions. The provision grants a freedom that can be restricted or invoked at will, making it a permission.
+
+Example for 'permission': “Member States may not, for reasons falling within the coordinated field, restrict the freedom to provide information society services from another Member State.” This a prohibition, because Member States are not allowed, in a non-optional way, to ‘restrict the freedom to provide information society services from another Member State’.
+
+Example for 'omission': "Vendors are allowed to not post labels on their products." In this example, not posting labels is an inaction that is permitted and optional, making it an omission.
+
+Example for 'norm addressee': "Food businesses are required to ensure that their products are safe for human consumption and comply with relevant EU legislation." In this example, ‘food businesses’ are the norm addressee, because they are the ones ‘required to ensure that their products are safe for human consumption and comply with relevant EU legislation’.
+
+Example for 'beneficiary': “Providers of intermediary services which do not have an establishment in the Union but which offer services in the Union shall designate, in writing, a legal or natural person to act as their legal representative in one of the Member States where the provider offers its services”. In this example, ‘a legal or natural person’ is the beneficiary, because it is the object of the obligation to ‘designate’.
+
+Example for 'beneficiary': "Certain circumstances allow EU citizens to work in another EU country without a work permit or residency permit." In this example, ‘EU citizens’ are the beneficiary, because they are the object of the permission to ‘work in another EU country without a work permit or residency permit’. 'Beneficiaries' are also the norm addressee.
+
+Return all information that is necessary to properly understand the identified modality. Return the results in the following format:
+```
+{
+	"deontic_modality": [
+		{
+			"text": "deontic modality 1",
+			"class": "power | obligation | permission | prohibition | omission | right",
+			"norm_addressee": ["norm addressee 1", "norm addressee 2", ...],
+			"beneficiary": ["beneficiary 1", "beneficiary 2", ...]
+		},
+		...
+	]
+}
+```
+Result:

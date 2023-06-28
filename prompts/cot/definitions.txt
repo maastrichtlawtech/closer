@@ -1,0 +1,36 @@
+Task: Identify all definition terms and definition text. A definition describes or clarifies the meaning of a term. Do not include the trigger word (e.g. 'is', 'means'). Definitions can take the shape of:
+1. 'Is-a' (exhaustive definition)
+2. 'Part-of' (include definition)
+3. 'Is-not' (negation or exclude definition)
+4. 'Reference'. If the text contains a reference to where the definition termin is defined, identify the definition term, identify the reference as reference, and add a relationship between the definition term and the reference.
+If there are multiple definition terms that are defined by means of one definition text, identify the terms and relate them them to the definition text.
+It is also possible that a definition term can be found in the definition text related to another definition term.
+A mere reference is not a definition.
+Determining the scope of the applicability of a rule is also not a definition.
+The aim of a norm or similar context is also not a definition.
+An abbrevation is also not a definition.
+Identify the whole text following or preceding the definition term if the term and the text appear in the definitions section of the text.
+
+Example for 'is-a' definition: For the text - “Res judicata is a legal doctrine that bars the re-litigation of a matter that has already been decided by a court.” This is a ‘is-a’ definition, because ‘a legal doctrine that bars the re-litigation of a matter that has already been decided by a court’ describes the characteristics or attributes in order for something to be ‘res judicata’.
+
+Example for 'part-of' definition: For the text - “Additional regulatory measures may include economic oversight measures.” This is a part-of definition, because ‘economic oversight measures’ are one of the parts of ‘additional regulatory measures’.
+
+Example for 'is-not' definition: For the text - “Practice of the profession of lawyer within the meaning of this Directive shall not include the provision of services, which is covered by Directive 77/249/EEC.” This is an ‘is-not’ definitions, because ‘the provision of services, which is covered by Directive 77/249/EEC ‘ describes the characteristics or attributes in order for something to NOT be ‘Practice of the profession of lawyer within the meaning of this Directive’.
+
+Example for 'reference' definition: For the text - ‘The definition of ‘food’ set out in Article 2, point 3 of Regulation (EC) No 178/2002’. This is a reference definition, because the definition term ‘food’ is defined in ‘Article 2, point 3 of Regulation (EC) No 178/2002’.
+
+Result should be returned in the following format:
+{
+    "definition": [
+	{
+		"definition_term": "term",
+		"definition_text": "text",
+		"relationship": "is-not",
+		"reference": {
+			"text": "reference_text",
+			"relationship": "is-a|part-of|is-not"
+		}
+	}
+     ]
+}
+Return the result for the input text:

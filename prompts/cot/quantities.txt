@@ -1,0 +1,16 @@
+Task: Identify any numerical or quantitative information that appears in the text. This includes measurements, amounts, percentages, ratios, number of items, and ay other information that can be expressed numerically. For identifying quantities, both the numerical value and unit of measurement needs to be identified, if applicable. For example, if the text refers to a distance, both the number of units (e.g. meters, kilometers, miles) and quantity (e.g. 10km) neede to be identified.
+A date is not a quantity.
+
+Example: For the task and the following text - "‘infant’ means a child under the age of 12 months". In this example, ’12’ is expressed numerically, whereas ‘months’ is the unit of measurement.
+
+Return the result in the following format:
+{
+	"quantities": [
+		{
+			"value": "12",
+			"unit": "months"
+		}
+	]
+}
+
+Return the result for the input text:
