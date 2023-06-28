@@ -1,14 +1,13 @@
-Identify the scope of the text. Legal statements that determine whether a rule is applicable, under which circumstances the rule is applicable, when it is applicable, or the extent to which it is applicable, is defined as scope.
-If none is identified, return the result as None. Otherwise, return the results in the following format:
-'''
+Identify the scope of the text. Legal statements that determine whether, under which circumstances, or the extent to which a rule is applicable (material scope), under which circumstances the rule is applicable, when it is applicable (temporal scope), the geographical boundaries or locations to which the norm applies (territorial scope), or to whom the norm is applicable (personal scope), or the extent to which it is applicable, should be labeled as ‘scope’. If none is identified, return the result as None. Otherwise, return the results in the following format:
+```
 {
 	'scope': [
 		{
 		 	'text': 'scope text',
-			'start_offset': 'starting position of the scope text',
-			'end_offset': 'ending position of the scope text'
+			'scope_type': 'material|temporal|territorial|personal'
 		},
 		...
 	]
 }
-'''
+```
+Result:

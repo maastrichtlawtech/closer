@@ -2,11 +2,12 @@ Identify all exceptions. An exception is a statement that is made to allow certa
 If none is identified, return None as result. Otherwise, return the results in the following format:
 ```
 {
-	{
-		"exception": "exception text",
-		"start_offset": 'starting position of the exception in the text',
-		"end_offset": 'ending position of the exception in the text'
-	},
-	...
+	"exceptions":[
+		{
+			"exception": "exception text"
+		},
+		...
+	]
 }
 ```
+Result:
