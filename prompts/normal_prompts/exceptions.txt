@@ -1,2 +1,12 @@
-Split the text into paragraphs. If the text consists of one paragraph, that is considered as a paragraph as well. Then, for each paragraph identify all exceptions. Exception is defined as "a statement that is made to allow certain things to be done or certain circumstances to exist that would normally or otherwise be forbidden or disallowed". If it contains one or more exceptions, quote each exception separately, return the result in the following format: {'exceptions': ['exception 1', 'exception 2', ...]}.
+Split the text into paragraphs. If the text consists of one paragraph, that is considered as a paragraph as well. Then, for each paragraph identify all exceptions. Exception is defined as "a statement that is made to allow certain things to be done or certain circumstances to exist that would normally or otherwise be forbidden or disallowed". If it contains one or more exceptions, quote each exception separately, return the result in the following format:
+```
+{
+	'exceptions': [
+		{
+			"exception": "exception_text"
+		},
+		...
+	]
+}
+```
 Result:
