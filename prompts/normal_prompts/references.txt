@@ -1,11 +1,9 @@
-A reference is mentions or points to a document (eg Regulation, Directive) or parts of a document (eg Article, Annex, Appendix). Recognize all references and keep count of each reference. For each reference, indicate whether the reference to is - a part of the same document or to another document. Return the results in the following format:
+A reference is mentions or points to a document (eg Regulation, Directive) or parts of a document (eg Article, Annex, Appendix). Recognize all references.Return the results in the following format:
 ```
 {
 	"reference": [
 		{
-			"text": "reference text",
-			"count": 1,
-			"same_document": False
+			"text": "reference text"
 		},
 		...
 	]
