@@ -9,9 +9,7 @@ If none is identified, return the result as None. Otherwise, return the results 
 {
 	"reference": [
 		{
-			"text": "reference text",
-			"start_offset": 'starting position of the reference in the text',
-			"end_offset": 'ending position of the reference in the text'
+			"text": "reference text"
 		},
 		...
 	]
