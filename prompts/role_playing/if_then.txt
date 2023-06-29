@@ -10,8 +10,8 @@ Return all information that is necessary to properly understand the identified I
 "if-then-statements":
 	[
 		{
-			'if': 'IF statement',
-		 	'then': 'THEN statement'
+			"if": "IF statement",
+		 	"then": "THEN statement"
 		},
 		...
 	]

@@ -8,13 +8,14 @@ Example: For the task and the given text -
 Here, "The MSSG" is the IF. If the condition is met, then the, in this example, obligation "shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8" is activated.
 
 Result should be returned in the following format:
+```
 {
-'If-then-statements': [
+"If-then-statements": [
 	{
-		'If': 'The MSSG',
-		'then': 'shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8'
+		"If": "The MSSG",
+		"then": "shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8"
 	}
 ]
 }
-
+```
 Return result for the input text:

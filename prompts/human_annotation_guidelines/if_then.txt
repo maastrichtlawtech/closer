@@ -11,8 +11,8 @@ If none is identified, return result as None. Otherwise, return the results in t
 "if-then-statements":
 	[
 		{
-			'if': 'IF statement',
-		 	'then': 'THEN statement'
+			"if": "IF statement",
+		 	"then": "THEN statement"
 		},
 		...
 	]
