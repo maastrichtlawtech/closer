@@ -11,7 +11,8 @@ Return all information that is necessary to properly understand the identified I
 	[
 		{
 			"if": "IF statement",
-		 	"then": "THEN statement"
+		 	"then": "THEN statement",
+			"condition_type": "precondition|postcondition"
 		},
 		...
 	]

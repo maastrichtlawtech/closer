@@ -5,7 +5,8 @@ Extract all IF-THEN statements and return the result in the following format:
 	[
 		{
 			"if": "IF statement",
-		 	"then": "THEN statement"
+		 	"then": "THEN statement",
+			"condition_type": "precondition|postcondition"
 		},
 		...
 	]

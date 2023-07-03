@@ -13,7 +13,8 @@ Result should be returned in the following format:
 "If-then-statements": [
 	{
 		"If": "The MSSG",
-		"then": "shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8"
+		"then": "shall be responsible for fulfilling the tasks referred to in Article 4(3) and (4) and Articles 5 to 8",
+		"condition_type": "precondition|postcondition"
 	}
 ]
 }
