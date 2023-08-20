@@ -3,6 +3,7 @@ import os
 
 import openai
 from langchain import OpenAI
+from langchain.chat_models import ChatOpenAI
 from llama_index import (GPTVectorStoreIndex, LLMPredictor, PromptHelper,
                          ServiceContext, SimpleDirectoryReader, StorageContext,
                          load_index_from_storage)
@@ -22,10 +23,15 @@ class OpenaiTask:
         self.num_output = 1000
         self.max_chunk_overlap = 0.1
         self.chunk_size_limit = 512 
-        self.llm_predictor = LLMPredictor(llm=OpenAI(temperature=self.temperature,
-                                                    model_name=self.model_name,
-                                                    top_p=self.top_p
-                                                    ))
+        if self.model_name == 'text-davinci-003':
+            self.llm_predictor = LLMPredictor(llm=OpenAI(temperature=self.temperature,
+                                                         model_name=self.model_name,
+                                                         top_p=self.top_p))
+        else:
+            self.llm_predictor = LLMPredictor(llm=ChatOpenAI(temperature=self.temperature,
+                                                        model_name=self.model_name,
+                                                        top_p=self.top_p
+                                                        ))
         '''
         self.prompt_helper = PromptHelper(context_window=self.max_input_size,
                                          chunk_overlap_ratio=self.max_chunk_overlap,
