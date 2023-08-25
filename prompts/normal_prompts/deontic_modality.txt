@@ -1,22 +1,28 @@
-For the given text, identify the following:
-1. Power: A power refers to the ability or authority to impose obligations, permissions, or prohibitions on others. The difference with the other modalities below lies in the possibility to create norms.
-2. Right: A right grants a person an inherent entitlement to perform or demand certain actions, inactions, or behaviors from others without interference. Contrary to permissions, an inherent entitlement refers to a fundamental right or claim that a person possesses by virtue of their status or existence. A right suggests that the entitlement is inherent to an individual"s nature or position and does not depend on external factors or conditions. Inherent entitlements are often considered universal and inalienable, meaning they cannot be taken away or revoked. Protection from interference concerns safeguarding an individual"s rights or interests. Invoking the right prevents or prohibits others from interfering with it.
-3. Obligation: An obligation is an action or inaction that is permissible and non-optional.
-4. Permission: A permission is an action that is permissible and optional. A permission grants a freedom that can be revoked or restricted at will (as opposed to rights).
-5. Prohibition: A prohibition is an action or inaction that is not permissible. A prohibition is not optional.
-6. Omission: An omission is an inaction that is permitted and optional.
-The six categories are mutually exclusive.
-In case it is one of the modalities above, identify all the Norm Addressees and Beneficiaries. A Norm Addressee is the person or entity to whom the norm is directed. A Beneficiary is a person, group of persons, or entity that is the recipient or object  of the power/right/obligation/permission/prohibition/omission.
+Consider the following context:
+Power. A power refers to the ability or authority of a person (natural or legal), an organization, or a body to impose rights, powers, obligations, permissions, or prohibitions on others. The difference with the other modalities below lies in the possibility to create norms.
+Right. A right grants a person (natural or legal), an organization, or a body an inherent entitlement to perform or demand certain actions, inactions, or behaviors from others without interference. Contrary to permissions, an inherent entitlement refers to a fundamental right or claim that a person possesses by virtue of their status or existence. A right suggests that the entitlement is inherent to an individual's nature or position and does not depend on external factors or conditions. Inherent entitlements are often considered universal and inalienable, meaning they cannot be taken away or revoked. Protection from interference concerns safeguarding an individual's rights or interests. Invoking the right prevents or prohibits others from interfering with it.
+Obligation. An obligation is an action or inaction that is permissible and non-optional. Permission. A permission is an action or inaction that is permissible and optional. A permission grants a freedom that can be revoked or restricted at will (as opposed to rights).
+Prohibition. A prohibition is an action or inaction that is not permissible. A prohibition is not optional.
+Active role: An Active Role concerns (1) a person (natural or legal), an organization, or a body who / that (2) bears the primary responsibility for fulfilling or violating a deontic statement. An active role concerns the subject of the action who actively engages in performing or refraining from certain actions.
+Passive role: A Passive Role concerns (1) a person (natural or legal), an organization, or a body (2) who / that is affected by the deontic statement but does not bear the primary responsibility for fulfilling or violating it. The passive role (3) is the correlative role to the active role for a particular deontic clause.
+Note that the categories (power|right|obligation|permission|prohibition and active role/passive role) are mutually exclusive, meaning that a power|right|obligation|permission|prohibition cannot be another deontic clause at the same time, and that an active role cannot be a passive role (and v.v.), at least in the same atomic statement.
 
-Return all information that is necessary to properly understand the identified modality. Return the results in the following format:
+You are an expert in deontic logic. Perform the following tasks:
+
+1. Parse the text into atomic statements, meaning that each statement contains no more than one power|right|obligation|permission|prohibition.
+
+2. For each atomic statement, (1) the type of clause (power|right|obligation|permission|prohibition), (2) the action, (3) the active role, and (4) the passive role. If something is not observed, return null.
+
+Return the results in the following json format:
 ```
 {
-	"deontic_modality": [
+	"deontic_modality":	[
 		{
-			"text": "deontic modality 1",
-			"class": "power | obligation | permission | prohibition | omission | right",
-			"norm_addressee": ["norm addressee 1", "norm addressee 2", ...],
-			"beneficiary": ["beneficiary 1", "beneficiary 2", ...]
+			"atomic_statement": "...",
+			"type": "power|right|obligation|permission|prohibition",
+			"action: "...",
+			"active_role": "...",
+			"passive_role": "..."
 		},
 		...
 	]
