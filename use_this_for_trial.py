@@ -301,7 +301,7 @@ def execute_tasks(article=None, openai_obj=None, task=None, prompt=None):
                     file_name = 'quantity.txt'
                 elif task == 'scope':
                     file_name = 'scope.txt'
-                with open(prompt_path + file_name, 'r') as f:
+                with open(prompt_path + file_name, 'r', encoding='utf-8') as f:
                     prompt = f.read()
                 temp_dict = openai_obj.execute_task(article=article_split, prompt=prompt)
                 if temp_dict is not None:
@@ -355,7 +355,7 @@ for article in os.listdir(_path):
                                            openai_obj=openai_obj)
             '''
             # if index is set as false
-            with open('./prompts/manual_prompt.txt', 'r') as f:
+            with open('./prompts/manual_prompt.txt', 'r', encoding='utf-8') as f:
                 deontic_modality_prompt = f.read()
 
             processed_data = execute_tasks(article=article_split,
