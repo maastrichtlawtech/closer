@@ -8,7 +8,6 @@ import xlsxwriter
 from dotenv import load_dotenv
 
 from legal_openai.openai_tasks import OpenaiTask
-from nerl.nerl import EntityRecognizer
 
 load_dotenv()
 tagme_api_key = os.getenv("GCUBE_TOKEN")
@@ -72,8 +71,8 @@ quantulum_excel_file = 'quantulum'
 # Column names
 definitions_column = ['article', 'prompt_method', 'definition_term', 'definition_text',
                       'relationship', 'reference_text', 'reference_relationship']
-deontic_modality_column = ['article', 'prompt_method', 'text', 'class',
-                           'norm_addressee', 'beneficiary']
+deontic_modality_column = ['article', 'prompt_method', 'atomic_statement', 'class',
+                           'active_role', 'power_role']
 exceptions_column = ['article', 'prompt_method', 'exception']
 if_then_column = ['article', 'prompt_method', 'if_statement',
                   'then_statement', 'condition_type']
@@ -207,10 +206,10 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                     try:
                         deontic_modality_df.loc[len(deontic_modality_df)] = [article,
                                                                              prompt_type,
-                                                                             i['text'],
+                                                                             i['atomic_statement'],
                                                                              i['class'],
-                                                                             i['norm_addressee'],
-                                                                             i['beneficiary']]
+                                                                             i['active_role'],
+                                                                             i['passive_role']]
                     except KeyError:
                         with open(f'./output/deontic_modality/{article}_definitions.json', 'w') as f:
                             json.dump(data, f, indent=4)
@@ -272,7 +271,7 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                     scope_df.loc[len(scope_df)] = temp_list 
         return scope_df
 # Method to run definition recognition will prompts for a given article
-def execute_tasks(article=None, openai_obj=None, task=None):
+def execute_tasks(article=None, openai_obj=None, task=None, prompt=None):
     if article is None:
         print("No article provided, exiting")
         sys.exit(1)
@@ -285,42 +284,54 @@ def execute_tasks(article=None, openai_obj=None, task=None):
     else:
         processed_data_final = pd.DataFrame()
         processed_data = pd.DataFrame()
-        for prompt_path in prompt_paths:
-            print(f"Processing with {prompt_path}")
-            if task == 'definition':
-                file_name = 'definitions.txt'
-            elif task == 'deontic_modality':
-                file_name = 'deontic_modality.txt'
-            elif task == 'exceptions':
-                file_name = 'exceptions.txt'
-            elif task == 'references':
-                file_name = 'references.txt'
-            elif task == 'if_then':
-                file_name = 'if_then.txt'
-            elif task == 'quantity':
-                file_name = 'quantity.txt'
-            elif task == 'scope':
-                file_name = 'scope.txt'
-            with open(prompt_path + file_name, 'r') as f:
-                prompt = f.read()
-            temp_dict = openai_obj.execute_task(article=article_split, prompt=prompt)
-            if temp_dict is not None:
-                processed_data = data_process(article=article,
-                                              task=task,
-                                              data=temp_dict,
-                                              prompt_type=prompt_path.split('/')[2].strip())
+        if prompt is None:
+            for prompt_path in prompt_paths:
+                print(f"Processing with {prompt_path}")
+                if task == 'definition':
+                    file_name = 'definitions.txt'
+                elif task == 'deontic_modality':
+                    file_name = 'deontic_modality.txt'
+                elif task == 'exceptions':
+                    file_name = 'exceptions.txt'
+                elif task == 'references':
+                    file_name = 'references.txt'
+                elif task == 'if_then':
+                    file_name = 'if_then.txt'
+                elif task == 'quantity':
+                    file_name = 'quantity.txt'
+                elif task == 'scope':
+                    file_name = 'scope.txt'
+                with open(prompt_path + file_name, 'r') as f:
+                    prompt = f.read()
+                temp_dict = openai_obj.execute_task(article=article_split, prompt=prompt)
+                if temp_dict is not None:
+                    processed_data = data_process(article=article,
+                                                  task=task,
+                                                  data=temp_dict,
+                                                  prompt_type=prompt_path.split('/')[2].strip())
                 processed_data_final = pd.concat([processed_data_final, processed_data],
                                                  ignore_index=True)
                 print(f"Output of processed data {processed_data_final}")
+        else:
+            if prompt is not None:
+                temp_dict = openai_obj.execute_task(article=article_split, prompt=prompt)
+                if temp_dict is not None:
+                    processed_data_final = data_process(article=article,
+                                                        task=task,
+                                                        data=temp_dict,
+                                                        prompt_type='manual')
+            else:
+                print("No prompt provided, exiting")
+                sys.exit(1)
         return processed_data_final
-
 # Provide path from which files are to be read
 # Not as sub directories but just text files
 _path = './input/latest_provisions/'
 for article in os.listdir(_path):
     if article.endswith('.txt'):
         article_split = article.split('.txt')[0]
-        openai_obj = OpenaiTask(path=_path, temperature=0) 
+        # Change index value to False if you don't want to index the text
+        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=False) 
         '''
         # Definition recognition with openai
         print(f"Processing {article} with openai for definitions")
@@ -337,9 +348,20 @@ for article in os.listdir(_path):
         print(f"Processing {article} with openai for deontic modality")
         if not os.path.exists(output_deontic_modality_base_dir + str(article_split) +
                               '_deontic_modality.csv'):
+            # if index is set as true
+            '''
             processed_data = execute_tasks(article=article_split,
                                            task='deontic_modality',
                                            openai_obj=openai_obj)
+            '''
+            # if index is set as false
+            with open('./prompts/manual_prompt.txt', 'r') as f:
+                deontic_modality_prompt = f.read()
+
+            processed_data = execute_tasks(article=article_split,
+                                           task='deontic_modality',
+                                           openai_obj=openai_obj,
+                                            prompt=deontic_modality_prompt)
             if processed_data is not None:
                 processed_data.to_csv(output_deontic_modality_base_dir +
                                       str(article_split) +
