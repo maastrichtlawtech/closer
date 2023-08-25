@@ -71,10 +71,8 @@ quantulum_excel_file = 'quantulum'
 # Column names
 definitions_column = ['article', 'prompt_method', 'definition_term', 'definition_text',
                       'relationship', 'reference_text', 'reference_relationship']
-deontic_modality_column_normal_prompt = ['article', 'prompt_method', 'atomic_statement',
-                                         'class', 'active_role', 'power_role']
-deontic_modality_column = ['article', 'prompt_method', 'text', 'class',
-                          'norm_addresse', 'beneficiary']
+deontic_modality_column = ['article', 'prompt_method', 'atomic_statement/text', 'class/type', 'action',
+                          'active_role/norm_addresse', 'passive_role/beneficiary']
 exceptions_column = ['article', 'prompt_method', 'exception']
 if_then_column = ['article', 'prompt_method', 'if_statement',
                   'then_statement', 'condition_type']
@@ -147,12 +145,9 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                                          'NA', 'NA', 'NA', 'NA']
             return temp_df
         elif task == 'deontic_modality':
-            if prompt_type == 'normal_prompt':
-                temp_df = pd.DataFrame(columns=deontic_modality_column_normal_prompt)
-            else:
-                temp_df = pd.DataFrame(columns=deontic_modality_column)
+            temp_df = pd.DataFrame(columns=deontic_modality_column)
             temp_df.loc[len(temp_df)] = [article, prompt_type, 'In the JSON file',
-                                         'NA', 'NA', 'NA']
+                                         'NA', 'NA', 'NA', 'NA']
             return temp_df
         elif task == 'exception':
             temp_df = pd.DataFrame(columns=exceptions_column)
@@ -196,7 +191,7 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                                              'NA', 'NA']
                                 definitions_df.loc[len(definitions_df)] = temp_list
                         except KeyError:
-                                with open(f'./output/definitions/{article}_definitions.json', 'w') as f:
+                                with open(f'./output/definitions/{article}_{task}.json', 'w') as f:
                                     json.dump(data, f, indent=4)
                                     print(f'Exception in {article}')
                                 temp_list = [article, prompt_type, 'In the JSON file',
@@ -204,19 +199,17 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                                 definitions_df.loc[len(definitions_df)] = temp_list
         return definitions_df
     if task == 'deontic_modality':
-        if prompt_type == 'normal_prompt':
-            deontic_modality_df = pd.DataFrame(columns=deontic_modality_column_normal_prompt)
-        else:
-            deontic_modality_df = pd.DataFrame(columns=deontic_modality_column)
+        deontic_modality_df = pd.DataFrame(columns=deontic_modality_column)
         for key in data.keys():
             if key == 'deontic_modality':
                 for i in data[key]:
                     try:
-                        if prompt_type == 'normal_prompt':
+                        if prompt_type == 'normal_prompts':
                             deontic_modality_df.loc[len(deontic_modality_df)] = [article,
                                                                                  prompt_type,
                                                                                  i['atomic_statement'],
-                                                                                 i['class'],
+                                                                                 i['type'],
+                                                                                 i['action'],
                                                                                  i['active_role'],
                                                                                  i['passive_role']]
                         else:
@@ -224,15 +217,16 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                                                                                  prompt_type,
                                                                                  i['text'],
                                                                                  i['class'],
+                                                                                 'NA',
                                                                                  i['norm_addressee'],
                                                                                  i['beneficiary']]
                     except KeyError:
-                        with open(f'./output/deontic_modality/{article}_definitions.json', 'w') as f:
+                        with open(f'./output/deontic_modality/{article}_{task}.json', 'w') as f:
                             json.dump(data, f, indent=4)
                         deontic_modality_df.loc[len(deontic_modality_df)] = [article,
                                                                              prompt_type,
                                                                              'In the JSON file',
-                                                                            'NA', 'NA', 'NA']
+                                                                            'NA', 'NA', 'NA', 'NA']
         return deontic_modality_df
     if task == 'exceptions':
         exceptions_df = pd.DataFrame(columns=exceptions_column)
