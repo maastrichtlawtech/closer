@@ -71,8 +71,10 @@ quantulum_excel_file = 'quantulum'
 # Column names
 definitions_column = ['article', 'prompt_method', 'definition_term', 'definition_text',
                       'relationship', 'reference_text', 'reference_relationship']
-deontic_modality_column = ['article', 'prompt_method', 'atomic_statement', 'class',
-                           'active_role', 'power_role']
+deontic_modality_column_normal_prompt = ['article', 'prompt_method', 'atomic_statement',
+                                         'class', 'active_role', 'power_role']
+deontic_modality_column = ['article', 'prompt_method', 'text', 'class',
+                          'norm_addresse', 'beneficiary']
 exceptions_column = ['article', 'prompt_method', 'exception']
 if_then_column = ['article', 'prompt_method', 'if_statement',
                   'then_statement', 'condition_type']
@@ -145,7 +147,10 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                                          'NA', 'NA', 'NA', 'NA']
             return temp_df
         elif task == 'deontic_modality':
-            temp_df = pd.DataFrame(columns=deontic_modality_column)
+            if prompt_type == 'normal_prompt':
+                temp_df = pd.DataFrame(columns=deontic_modality_column_normal_prompt)
+            else:
+                temp_df = pd.DataFrame(columns=deontic_modality_column)
             temp_df.loc[len(temp_df)] = [article, prompt_type, 'In the JSON file',
                                          'NA', 'NA', 'NA']
             return temp_df
@@ -199,17 +204,28 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                                 definitions_df.loc[len(definitions_df)] = temp_list
         return definitions_df
     if task == 'deontic_modality':
-        deontic_modality_df = pd.DataFrame(columns=deontic_modality_column)
+        if prompt_type == 'normal_prompt':
+            deontic_modality_df = pd.DataFrame(columns=deontic_modality_column_normal_prompt)
+        else:
+            deontic_modality_df = pd.DataFrame(columns=deontic_modality_column)
         for key in data.keys():
             if key == 'deontic_modality':
                 for i in data[key]:
                     try:
-                        deontic_modality_df.loc[len(deontic_modality_df)] = [article,
-                                                                             prompt_type,
-                                                                             i['atomic_statement'],
-                                                                             i['class'],
-                                                                             i['active_role'],
-                                                                             i['passive_role']]
+                        if prompt_type == 'normal_prompt':
+                            deontic_modality_df.loc[len(deontic_modality_df)] = [article,
+                                                                                 prompt_type,
+                                                                                 i['atomic_statement'],
+                                                                                 i['class'],
+                                                                                 i['active_role'],
+                                                                                 i['passive_role']]
+                        else:
+                            deontic_modality_df.loc[len(deontic_modality_df)] = [article,
+                                                                                 prompt_type,
+                                                                                 i['text'],
+                                                                                 i['class'],
+                                                                                 i['norm_addressee'],
+                                                                                 i['beneficiary']]
                     except KeyError:
                         with open(f'./output/deontic_modality/{article}_definitions.json', 'w') as f:
                             json.dump(data, f, indent=4)
@@ -326,12 +342,12 @@ def execute_tasks(article=None, openai_obj=None, task=None, prompt=None):
         return processed_data_final
 # Provide path from which files are to be read
 # Not as sub directories but just text files
-_path = './input/latest_provisions/'
+_path = './input/test_provisions/'
 for article in os.listdir(_path):
     if article.endswith('.txt'):
         article_split = article.split('.txt')[0]
         # Change index value to False if you don't want to index the text
-        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=False) 
+        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=True) 
         '''
         # Definition recognition with openai
         print(f"Processing {article} with openai for definitions")
@@ -349,7 +365,6 @@ for article in os.listdir(_path):
         if not os.path.exists(output_deontic_modality_base_dir + str(article_split) +
                               '_deontic_modality.csv'):
             # if index is set as true
-            '''
             processed_data = execute_tasks(article=article_split,
                                            task='deontic_modality',
                                            openai_obj=openai_obj)
@@ -362,6 +377,7 @@ for article in os.listdir(_path):
                                            task='deontic_modality',
                                            openai_obj=openai_obj,
                                             prompt=deontic_modality_prompt)
+            '''
             if processed_data is not None:
                 processed_data.to_csv(output_deontic_modality_base_dir +
                                       str(article_split) +
