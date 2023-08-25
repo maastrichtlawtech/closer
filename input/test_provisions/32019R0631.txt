@@ -1,0 +1,51 @@
+
+Article 1
+
+1.   This Regulation establishes CO2 emissions performance requirements for new passenger cars and for new light commercial vehicles in order to contribute to achieving the Union's target of reducing its greenhouse gas emissions, as laid down in Regulation (EU) 2018/842, and the objectives of the Paris Agreement and to ensure the proper functioning of the internal market.
+
+2.   From 1 January 2020, this Regulation sets an EU fleet-wide target of 95 g CO2/km for the average emissions of new passenger cars and an EU fleet-wide target of 147 g CO2/km for the average emissions of new light commercial vehicles registered in the Union, as measured until 31 December 2020 in accordance with Regulation (EC) No 692/2008 together with Implementing Regulations (EU) 2017/1152 and (EU) 2017/1153, and from 1 January 2021 measured in accordance with Regulation (EU) 2017/1151.
+
+3.   This Regulation will, until 31 December 2024, be complemented by additional measures corresponding to a reduction of 10 g CO2/km as part of the Union's integrated approach referred to in the Commission's communication of 7 February 2007 entitled ‘Results of the review of the Community Strategy to reduce CO2 emissions from passenger cars and light-commercial vehicles’.
+
+4.   From 1 January 2025, the following EU fleet-wide targets shall apply:
+(a) for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 15 % reduction of the target in 2021determined in accordance with point 6.1.1 of Part A of Annex I;
+
+(b) for the average emissions of the new light commercial vehicles fleet, an EU fleet-wide target equal to a 15 % reduction of the target in 2021 determined in accordance with point 6.1.1 of Part B of Annex I.
+
+
+Article 2
+
+4.   Article 4, points (b) and (c) of Article 7(4), Article 8 and points (a) and (c) of Article 9(1) shall not apply to a manufacturer which, together with all of its connected undertakings, is responsible for fewer than 1 000 new passenger cars or for fewer than 1 000 new light commercial vehicles registered in the Union in the previous calendar year, unless that manufacturer applies for and is granted a derogation in accordance with Article 10.
+
+
+Article 3 
+
+Definitions
+
+1.   For the purposes of this Regulation, the following definitions apply:
+
+(a) ‘average specific emissions of CO2’ means, in relation to a manufacturer, the average of the specific emissions of CO2 of all new passenger cars or of all new light commercial vehicles of which it is the manufacturer;
+
+(h) ‘specific emissions of CO2’ means the CO2 emissions of a passenger car or a light commercial vehicle measured in accordance with Regulation (EC) No 715/2007 and its implementing Regulations and specified as the CO2 mass emissions (combined) in the certificate of conformity of the vehicle. For passenger cars or light commercial vehicles which are not type-approved in accordance with Regulation (EC) No 715/2007, ‘specific emissions of CO2’ means the CO2 emissions measured pursuant to Regulation (EC) No 715/2007, notably in accordance with the same measurement procedure as specified in Regulation (EC) No 692/2008 until 31 December 2020, and from 1 January 2021 in Regulation (EU) 2017/1151, or in accordance with procedures adopted by the Commission to establish the CO2 emissions for such vehicles;
+
+(i) ‘footprint’ means the average track width multiplied by the wheelbase as stated in the certificate of conformity and defined in points 2.1 and 2.3 of Annex I to Directive 2007/46/EC;
+
+2.   For the purposes of this Regulation, ‘a group of connected manufacturers’ means a manufacturer and its connected undertakings. In relation to a manufacturer, ‘connected undertakings’ means:
+
+(a) undertakings in which the manufacturer has, directly or indirectly:
+(i) the power to exercise more than half the voting rights; or
+(ii) the power to appoint more than half the members of the supervisory board, board of management or bodies legally representing the undertaking; or
+(iii) the right to manage the undertaking's affairs;
+
+(b) undertakings which directly or indirectly have, over the manufacturer, the rights or powers referred to in point (a);
+
+(c) undertakings in which an undertaking referred to in point (b) has, directly or indirectly, the rights or powers referred to in point (a);
+
+(d) undertakings in which the manufacturer together with one or more of the undertakings referred to in point (a), (b) or (c), or in which two or more of the latter undertakings, jointly have the rights or powers referred to in point (a);
+
+(e) undertakings in which the rights or the powers referred to in point (a) are jointly held by the manufacturer or one or more of its connected undertakings referred to in points (a) to (d) and one or more third parties.
+
+
+Article 17
+
+2.   The power to adopt delegated acts referred to in Article 7(8), Article 10(8), the fourth subparagraph of Article 11(1), Article 13(4), Article 14(2) and Article 15(8) shall be conferred on the Commission for a period of six years from 15 May 2019. The Commission shall draw up a report in respect of the delegation of power not later than nine months before the end of the six-year period. The delegation of power shall be tacitly extended for periods of an identical duration, unless the European Parliament or the Council opposes such extension not later than three months before the end of each period.
