@@ -7,12 +7,14 @@ from langchain.chat_models import ChatOpenAI
 from llama_index import (GPTVectorStoreIndex, LLMPredictor, PromptHelper,
                          ServiceContext, SimpleDirectoryReader, StorageContext,
                          load_index_from_storage)
+from llama_index.indices.empty import EmptyIndex, EmptyIndexRetriever
 
 
 class OpenaiTask:
     def __init__(self, path, model_name='text-davinci-003',
                  api_key=None, top_p=1,
-                 temperature=0, index_type='GPTVectorStoreIndex'):
+                 temperature=0, index_type='GPTVectorStoreIndex',
+                 use_index=False):
         self.path = path
         self.model_name = model_name
         self.api_key = api_key
@@ -22,7 +24,8 @@ class OpenaiTask:
         self.max_input_size = 3000 
         self.num_output = 1000
         self.max_chunk_overlap = 0.1
-        self.chunk_size_limit = 512 
+        self.chunk_size_limit = 512
+        self.use_index = use_index
         if self.model_name == 'text-davinci-003':
             self.llm_predictor = LLMPredictor(llm=OpenAI(temperature=self.temperature,
                                                          model_name=self.model_name,
@@ -49,9 +52,10 @@ class OpenaiTask:
             openai.api_key = os.getenv('OPENAI_API_KEY')
         else:
             openai.api_key = api_key
-        print(f"{self.path, self.base_storage_path}")
-        self.load_indices()
-        print("Loaded indices")
+        if self.use_index:
+            print(f"{self.path, self.base_storage_path}")
+            self.load_indices()
+            print("Loaded indices")
 
     def eval_brokenliteral(self, value_obj, default_value=None, print_error=True):
         # https://stackoverflow.com/questions/75503925/how-to-extract-incomplete-python-objects-from-string
@@ -92,16 +96,32 @@ class OpenaiTask:
     def execute_task(self, article=None, prompt=None):
         if article is None:
             raise ValueError("Please provide an article number to extract from.")
-        index = load_index_from_storage(storage_context=StorageContext.from_defaults(
-            persist_dir=self.base_storage_path + '/' + article + '/'),
-            service_context=self.service_context)
-        query_engine = index.as_query_engine()
-        full_response = ''
-        while True:
-            resp = query_engine.query(prompt + '\n\n' + full_response)
-            if resp.response != "Empty Response":
-                full_response += (" "+ resp.response)
-            else:
-                break
-        print(full_response)
+        if self.use_index:
+            index = load_index_from_storage(storage_context=StorageContext.from_defaults(
+                persist_dir=self.base_storage_path + '/' + article + '/'),
+                service_context=self.service_context)
+            query_engine = index.as_query_engine()
+            full_response = ''
+            while True:
+                resp = query_engine.query(prompt + '\n\n' + full_response)
+                if resp.response != "Empty Response":
+                    full_response += (" "+ resp.response)
+                else:
+                    break
+            print(full_response)
+        else:
+            # Not functional yet although it should be
+            index_retrieve = EmptyIndexRetriever(index=EmptyIndex(),
+                                                 input_prompt=prompt)
+            query_engine = index_retrieve.retrieve("What is the capital of India?")
+            print(query_engine)
+            full_response = ''
+            while True:
+                resp = query_engine.query(prompt + '\n\n' + full_response)
+                print(resp)
+                if resp.response != "Empty Response":
+                    full_response += (" "+ resp.response)
+                else:
+                    break
+            print(full_response)
         return self.eval_brokenliteral(full_response)
