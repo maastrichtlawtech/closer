@@ -20,7 +20,7 @@ Return the results in the following json format:
 		{
 			"atomic_statement": "...",
 			"type": "power|right|obligation|permission|prohibition",
-			"action: "...",
+			"action": "...",
 			"active_role": "...",
 			"passive_role": "..."
 		},
