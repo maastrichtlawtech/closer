@@ -109,26 +109,29 @@ class EntityRecognizer:
             entity_uri[ent.text] = base_uri + str(ent.predicted_entity.wikidata_entity_id)
         return entity_uri
 
-    def openai_recognize(self, api_key=None, article=None, prompt=None, path=None):
+    def openai_recognize(self, api_key=None, article=None, prompt=None, path=None,
+                         use_index=True):
         if prompt is None:
-            with open(self.prompt_path + 'entity_recognition.txt', 'r') as f:
+            with open(self.prompt_path + '/normal_prompts/entity_recognition.txt', 'r') as f:
                 prompt = f.read()
-        response = OpenaiTask(path=path,api_key=api_key).execute_task(
+        response = OpenaiTask(path=path,api_key=api_key,use_index=use_index).execute_task(
             article=article,prompt=prompt)
         return response
 
-    def openai_wikidata_recognize(self, api_key=None, article=None, prompt=None, path=None):
+    def openai_wikidata_recognize(self, api_key=None, article=None, prompt=None,
+                                  path=None, use_index=True):
         if prompt is None:
-            with open(self.prompt_path + 'wikidata_entities.txt', 'r') as f:
+            with open(self.prompt_path + '/normal_prompts/wikidata_entities.txt', 'r') as f:
                 prompt = f.read()
-        response = OpenaiTask(path=path, api_key=api_key).execute_task(
+        response = OpenaiTask(path=path, api_key=api_key, use_index=use_index).execute_task(
             article=article, prompt=prompt)
         return response
 
-    def openai_eurovoc_recognize(self, api_key=None, article=None, prompt=None, path=None):
+    def openai_eurovoc_recognize(self, api_key=None, article=None, prompt=None,
+                                 path=None, use_index=True):
         if prompt is None:
-            with open(self.prompt_path + 'eurovoc_recognition.txt', 'r') as f:
+            with open(self.prompt_path + '/normal_prompts/eurovoc_recognition.txt', 'r') as f:
                 prompt = f.read()
-        response = OpenaiTask(path=path, api_key=api_key).execute_task(
+        response = OpenaiTask(path=path, api_key=api_key, use_index=use_index).execute_task(
             article=article, prompt=prompt)
         return response
