@@ -1,22 +1,24 @@
 import ast
+import logging
 import os
+import sys
 
 import openai
-from langchain import OpenAI
-from langchain.chat_models import ChatOpenAI
-from llama_index import (GPTVectorStoreIndex, LLMPredictor, PromptHelper,
-                         ServiceContext, SimpleDirectoryReader, StorageContext,
+from llama_index import (PromptHelper, ServiceContext, SimpleDirectoryReader,
+                         StorageContext, VectorStoreIndex,
                          load_index_from_storage)
-from llama_index.indices.empty import EmptyIndex, EmptyIndexRetriever
+from llama_index.llms import OpenAI
 
-
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
+openai.log = "info"
 class OpenaiTask:
-    def __init__(self, path, model_name='text-davinci-003',
+    def __init__(self, path, model='text-davinci-003',
                  api_key=None, top_p=1,
-                 temperature=0, index_type='GPTVectorStoreIndex',
-                 use_index=False):
+                 temperature=0, index_type='VectorStoreIndex',
+                 use_index=True):
         self.path = path
-        self.model_name = model_name
+        self.model = model
         self.api_key = api_key
         self.top_p = top_p
         self.temperature = temperature
@@ -26,15 +28,9 @@ class OpenaiTask:
         self.max_chunk_overlap = 0.1
         self.chunk_size_limit = 512
         self.use_index = use_index
-        if self.model_name == 'text-davinci-003':
-            self.llm_predictor = LLMPredictor(llm=OpenAI(temperature=self.temperature,
-                                                         model_name=self.model_name,
-                                                         top_p=self.top_p))
-        else:
-            self.llm_predictor = LLMPredictor(llm=ChatOpenAI(temperature=self.temperature,
-                                                        model_name=self.model_name,
-                                                        top_p=self.top_p
-                                                        ))
+        self.llm = OpenAI(temperature=self.temperature,
+                          model=self.model,
+                          top_p=self.top_p)
         '''
         self.prompt_helper = PromptHelper(context_window=self.max_input_size,
                                          chunk_overlap_ratio=self.max_chunk_overlap,
@@ -45,7 +41,7 @@ class OpenaiTask:
                                                            chunk_size_limit=self.chunk_size_limit)
         '''
         self.prompt_helper = PromptHelper()
-        self.service_context = ServiceContext.from_defaults(llm_predictor=self.llm_predictor,
+        self.service_context = ServiceContext.from_defaults(llm=self.llm,
                                                             prompt_helper=self.prompt_helper)
         self.base_storage_path = os.path.join(self.path, 'storage')
         if api_key is None:
@@ -86,10 +82,10 @@ class OpenaiTask:
             filename_split = filename.split(".txt")[0]
             file_storage_path = self.base_storage_path + '/' + filename_split +'/'
             if filename.endswith(".txt") and not os.path.isdir(file_storage_path):
-                if self.index_type == 'GPTVectorStoreIndex':
+                if self.index_type == 'VectorStoreIndex':
                     document = SimpleDirectoryReader(
                         input_files=[f"{self.path}/{filename}"]).load_data()
-                    index = GPTVectorStoreIndex.from_documents(document)
+                    index = VectorStoreIndex.from_documents(document)
                     index.index_struct.index_id = filename_split
                     index.storage_context.persist(persist_dir=f"{file_storage_path}") 
 
@@ -110,18 +106,16 @@ class OpenaiTask:
                     break
             print(full_response)
         else:
-            # Not functional yet although it should be
-            index_retrieve = EmptyIndexRetriever(index=EmptyIndex(),
-                                                 input_prompt=prompt)
-            query_engine = index_retrieve.retrieve("What is the capital of India?")
-            print(query_engine)
+            documents = SimpleDirectoryReader(input_files=[f"{self.path}/{article}.txt"]).load_data()
+            index = VectorStoreIndex.from_documents(documents)
+            query_engine = index.as_query_engine()
             full_response = ''
             while True:
                 resp = query_engine.query(prompt + '\n\n' + full_response)
-                print(resp)
+                print(resp.response)
                 if resp.response != "Empty Response":
                     full_response += (" "+ resp.response)
                 else:
                     break
             print(full_response)
-        return self.eval_brokenliteral(full_response)
+            return self.eval_brokenliteral(full_response)
