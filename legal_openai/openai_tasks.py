@@ -12,6 +12,8 @@ from llama_index.llms import OpenAI
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 openai.log = "info"
+
+
 class OpenaiTask:
     def __init__(self, path, model='text-davinci-003',
                  api_key=None, top_p=1,
@@ -23,7 +25,7 @@ class OpenaiTask:
         self.top_p = top_p
         self.temperature = temperature
         self.index_type = index_type
-        self.max_input_size = 3000 
+        self.max_input_size = 3000
         self.num_output = 1000
         self.max_chunk_overlap = 0.1
         self.chunk_size_limit = 512
@@ -80,14 +82,14 @@ class OpenaiTask:
     def load_indices(self):
         for filename in os.listdir(self.path):
             filename_split = filename.split(".txt")[0]
-            file_storage_path = self.base_storage_path + '/' + filename_split +'/'
+            file_storage_path = self.base_storage_path + '/' + filename_split + '/'
             if filename.endswith(".txt") and not os.path.isdir(file_storage_path):
                 if self.index_type == 'VectorStoreIndex':
                     document = SimpleDirectoryReader(
                         input_files=[f"{self.path}/{filename}"]).load_data()
                     index = VectorStoreIndex.from_documents(document)
                     index.index_struct.index_id = filename_split
-                    index.storage_context.persist(persist_dir=f"{file_storage_path}") 
+                    index.storage_context.persist(persist_dir=f"{file_storage_path}")
 
     def execute_task(self, article=None, prompt=None):
         if article is None:
@@ -101,7 +103,7 @@ class OpenaiTask:
             while True:
                 resp = query_engine.query(prompt + '\n\n' + full_response)
                 if resp.response != "Empty Response":
-                    full_response += (" "+ resp.response)
+                    full_response += (" " + resp.response)
                 else:
                     break
             print(full_response)
@@ -114,7 +116,7 @@ class OpenaiTask:
                 resp = query_engine.query(prompt + '\n\n' + full_response)
                 print(resp.response)
                 if resp.response != "Empty Response":
-                    full_response += (" "+ resp.response)
+                    full_response += (" " + resp.response)
                 else:
                     break
             print(full_response)

@@ -1,10 +1,11 @@
-from datetime import datetime
-from http.server import BaseHTTPRequestHandler
 import json
-from bs4 import BeautifulSoup
 import re
 from abc import *
+from datetime import datetime
+from http.server import BaseHTTPRequestHandler
+
 import requests
+from bs4 import BeautifulSoup
 
 
 class IJsonifyable(ABC):
@@ -26,7 +27,8 @@ class SplitRule(Rule):
     def __init__(self, name, description):
         super().__init__(name, description)
         self.translations = {"part": ["part", "deel"], "title": ["title", "titel"], "chapter": [
-            "chapter", "hoofdstuk"], "section": ["section", "afdeling"], "subsection": ["subsection", "subafdeling"], "article": ["article", "artikel"]}
+            "chapter", "hoofdstuk"], "section": ["section", "afdeling"], "subsection": ["subsection", "subafdeling"],
+                             "article": ["article", "artikel"]}
 
     def check_fragment_type(self, s: str, name: str) -> bool:
         for w in self.translations[name]:
@@ -46,7 +48,8 @@ class TransformRule(Rule):
 
 
 class TemplateInfo(IJsonifyable):
-    def __init__(self, name: str = '', description: str = '', creator: str = '',  date: datetime = datetime.now()) -> None:
+    def __init__(self, name: str = '', description: str = '', creator: str = '',
+                 date: datetime = datetime.now()) -> None:
         self.name = name
         self.description = description
         self.creator = creator
@@ -57,13 +60,15 @@ class TemplateInfo(IJsonifyable):
 
 
 class Template(IJsonifyable):
-    def __init__(self, split_rule: SplitRule, transform_rules: list[TransformRule], info: TemplateInfo = TemplateInfo()) -> None:
+    def __init__(self, split_rule: SplitRule, transform_rules: list[TransformRule],
+                 info: TemplateInfo = TemplateInfo()) -> None:
         self.split_rule = split_rule
         self.transform_rules = transform_rules
         self.info = info
 
     def to_json(self) -> dict:
-        return {'info': self.info.to_json(), 'split_rule': self.split_rule.to_json(), 'transform_rules': [rule.to_json() for rule in self.transform_rules]}
+        return {'info': self.info.to_json(), 'split_rule': self.split_rule.to_json(),
+                'transform_rules': [rule.to_json() for rule in self.transform_rules]}
 
     def process_text(self, text: str) -> list[str]:
         texts = self.split_rule.split_text(text)
@@ -101,7 +106,7 @@ class SplitHTMLArticle(SplitRule):
                 pass
             res[-1] += current.get_text() + '\n\n'
             current = current.find_next_sibling()
-        #print(res)
+        # print(res)
 
         # recitals
         res.append("")
@@ -160,25 +165,25 @@ class SplitHTMLArticle(SplitRule):
                     level = 5
                 elif self.check_fragment_type(s, "title"):
                     if level < 5:
-                        to_write = to_write[:-(4-level+1)]
+                        to_write = to_write[:-(4 - level + 1)]
                     to_write.append(
                         s + '\n\n' + ti.find_next_sibling().get_text() + '\n\n')
                     level = 4
                 elif self.check_fragment_type(s, "chapter"):
                     if level < 4:
-                        to_write = to_write[:-(3-level+1)]
+                        to_write = to_write[:-(3 - level + 1)]
                     to_write.append(
                         s + '\n\n' + ti.find_next_sibling().get_text() + '\n\n')
                     level = 3
                 elif self.check_fragment_type(s, "section"):
                     if level < 3:
-                        to_write = to_write[:-(2-level+1)]
+                        to_write = to_write[:-(2 - level + 1)]
                     to_write.append(
                         s + '\n\n' + ti.find_next_sibling().get_text() + '\n\n')
                     level = 2
                 elif self.check_fragment_type(s, "subsection"):
                     if level < 2:
-                        to_write = to_write[:-(1-level+1)]
+                        to_write = to_write[:-(1 - level + 1)]
                     to_write.append(
                         s + '\n\n' + ti.find_next_sibling().get_text() + '\n\n')
                     level = 1
@@ -258,9 +263,9 @@ def process_text(text):
     res['order'] = ['introduction', 'recitals', 'articles', 'notes', 'annexes']
     res['introduction'] = [pre[0]]
     res['recitals'] = [pre[1]]
-    res['articles'] = pre[2:t.split_rule.total_articles+2]
-    res['notes'] = [pre[t.split_rule.total_articles+2]]
-    res['annexes'] = pre[t.split_rule.total_articles+3:len(pre)]
+    res['articles'] = pre[2:t.split_rule.total_articles + 2]
+    res['notes'] = [pre[t.split_rule.total_articles + 2]]
+    res['annexes'] = pre[t.split_rule.total_articles + 3:len(pre)]
     return res
 
 

@@ -1,11 +1,11 @@
 import json
 import os
-from parser.eurlex import get_text_from, process_text
 
 import nltk
 from dotenv import load_dotenv
 
 from nerl.nerl import EntityRecognizer
+from parser.eurlex import get_text_from, process_text
 from quantity.extract_quantities import QuantitiesExtractor
 from references.extract_references import ExtractReferences
 from rule_classification.deontic_logic import DeonticLogic
@@ -59,9 +59,9 @@ for article in os.listdir('./input/articles/'):
             for sent in tokenizer.tokenize(text):
                 temp_sent_data = {}
                 temp_sent_data["text"] = sent
-                classification_data = DeonticLogic(path='./input/articles/').\
-                        openai_classifier_logic_only(api_key=openai_api_key,
-                                                     article=article_split, text=sent)
+                classification_data = DeonticLogic(path='./input/articles/'). \
+                    openai_classifier_logic_only(api_key=openai_api_key,
+                                                 article=article_split, text=sent)
                 temp_sent_data["sentence_rule"] = classification_data['class']
                 temp_sent_data["obligation"] = classification_data['obligation']
                 temp_sent_data["obligation_holder"] = classification_data['obligation_holder']
@@ -72,14 +72,14 @@ for article in os.listdir('./input/articles/'):
                 temp_sent_data["omission"] = classification_data['omission']
                 temp_sent_data["concepts"] = entity.spacy_recognize(sent)
                 temp_sent_data["references"] = ExtractReferences().openai_references(
-                    path='./input/articles/', api_key=openai_api_key,article=article_split)
+                    path='./input/articles/', api_key=openai_api_key, article=article_split)
                 temp_sent_data["quantity"] = QuantitiesExtractor().quantulum_extract(text)
-                temp_sent_data["if_then"] = DeonticLogic(path='./input/articles/').\
-                        openai_if_then_fetch(api_key=openai_api_key,
-                                             article=article_split, text=sent)
-                temp_sent_data["describe_if_then"] = DeonticLogic(path='./input/articles/').\
-                        openai_if_then_describe(api_key=openai_api_key,
-                                                article=article_split, text=sent)
+                temp_sent_data["if_then"] = DeonticLogic(path='./input/articles/'). \
+                    openai_if_then_fetch(api_key=openai_api_key,
+                                         article=article_split, text=sent)
+                temp_sent_data["describe_if_then"] = DeonticLogic(path='./input/articles/'). \
+                    openai_if_then_describe(api_key=openai_api_key,
+                                            article=article_split, text=sent)
                 sent_collection.append(temp_sent_data)
                 article_collection["sentences"] = sent_collection
             articles.append(article_collection)

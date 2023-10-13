@@ -11,8 +11,8 @@ from nerl.nerl import EntityRecognizer
 logger = logging.getLogger(__name__)
 load_dotenv()
 tagme_api_key = os.getenv("GCUBE_TOKEN")
-os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY') 
-os.environ['TOKENIZERS_PARALLELISM'] = "false" 
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
+os.environ['TOKENIZERS_PARALLELISM'] = "false"
 # Set EU legislation document link 
 eu_legislation_2019_947_link = "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32019R0947&from=EN"
 
@@ -117,7 +117,7 @@ for article in os.listdir('./input/eu_legislation_2019_947/document_split/'):
         '''
         # Perform triple extraction
         temp_triple_data_openie = LegalKG().extract_triples_openie(text=article_text,
-                                                                   image_name=article_split) 
+                                                                   image_name=article_split)
         keys = temp_triple_data_openie[0].keys()
         '''
         with open('./output/triples_of_' + article_split + '.csv', 'w') as f:
@@ -137,4 +137,3 @@ for article in os.listdir('./input/eu_legislation_2019_947/document_split/'):
         else:
             logger.info("No knowledge graph can be created for " + article_split)
         # Store all details in json file for downstream application
-

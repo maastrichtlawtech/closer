@@ -18,5 +18,5 @@ class ExtractReferences:
         if prompt is None:
             with open(self.prompt_path + 'references.txt', "r") as f:
                 prompt = f.read()
-        return OpenaiTask(path=path,api_key=api_key).execute_task(article=article,
-                                                                  prompt=prompt)
+        return OpenaiTask(path=path, api_key=api_key).execute_task(article=article,
+                                                                   prompt=prompt)

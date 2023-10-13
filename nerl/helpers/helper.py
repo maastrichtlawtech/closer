@@ -20,8 +20,8 @@ class Helper:
         else:
             chunk = tokens[:chunk_size]
             yield chunk
-            yield from self.reak_up_file(tokens[chunk_size-overlap_size:],
-                                     chunk_size, overlap_size)
+            yield from self.break_up_file(tokens[chunk_size - overlap_size:],
+                                          chunk_size, overlap_size)
 
     def break_up_file_chunks(self, filename, chunk_size=500, overlap_size=100):
         tokens = word_tokenize(self.text)
@@ -33,9 +33,9 @@ class Helper:
         chunks = self.break_up_file_chunks(self.text, chunk_size=2000, overlap_size=100)
         for i, chunk in enumerate(chunks):
             print("Chunk {}: {}".format(i, len(chunk)))
-            new_prompt = self.prompt + "\n'''" +\
-                    self.convert_to_detokenized_text(chunk) +\
-                    "\n''' Result:"
+            new_prompt = self.prompt + "\n'''" + \
+                         self.convert_to_detokenized_text(chunk) + \
+                         "\n''' Result:"
             self.prompts.append(new_prompt)
             return self.prompts
 
@@ -44,7 +44,7 @@ class Helper:
         detokenized_text = detokenized_text.replace(" 's", "'s")
         return detokenized_text
 
-    def tiktoken_token(self, model_name): 
+    def tiktoken_token(self, model_name):
         if model_name == 'text-davinci-003':
             enc = tiktoken.get_encoding("p50k_base")
         elif model_name == 'gpt-4' or \
@@ -57,4 +57,3 @@ class Helper:
         enc.encode(input_text)
         num_tokens = len(enc.encode(input_text))
         return num_tokens
-

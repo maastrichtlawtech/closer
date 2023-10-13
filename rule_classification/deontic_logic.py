@@ -54,7 +54,7 @@ class DeonticLogic:
         return reponse_list
 
     def openai_if_then_fetch(self, model_name='text-davinci-003', temperature=0,
-                            top_p=1, api_key=None, prompt=None, article=None, text=None):
+                             top_p=1, api_key=None, prompt=None, article=None, text=None):
         if prompt is None:
             with open(self.prompt_path + '/deontic_logic/if_then.txt', 'r') as f:
                 if_then_prompt = f.read()
@@ -64,7 +64,7 @@ class DeonticLogic:
             return response
 
     def openai_if_then_describe(self, model_name='text-davinci-003', temperature=0,
-                            top_p=1, api_key=None, prompt=None, article=None, text=None):
+                                top_p=1, api_key=None, prompt=None, article=None, text=None):
         if prompt is None:
             with open(self.prompt_path + '/deontic_logic/describe_if_then.txt', 'r') as f:
                 describe_if_then_prompt = f.read()
@@ -74,10 +74,10 @@ class DeonticLogic:
             return response
 
     def openai_classifier_logic_only(self, model_name='text-davinci-003', temperature=0,
-                          top_p=1, api_key=None, prompt=None, article=None, text=None):
+                                     top_p=1, api_key=None, prompt=None, article=None, text=None):
         if prompt is None:
             with open(self.prompt_path + '/deontic_logic/classify_deontic_logic.txt', 'r') as f:
-                 classify_deontic_logic_prompt = f.read()
+                classify_deontic_logic_prompt = f.read()
             classify_deontic_logic_prompt = re.sub("<IF_THEN_RULE>", text, classify_deontic_logic_prompt)
             response = OpenaiTask(path=self.path, api_key=api_key).execute_task(
                 article=article, prompt=classify_deontic_logic_prompt)

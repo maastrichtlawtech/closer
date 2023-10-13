@@ -7,7 +7,7 @@ from openie import StanfordOpenIE
 logger = logging.getLogger(__name__)
 
 
-class LegalKG():
+class LegalKG:
     def __init__(self):
         self.properties = {
             'openie.affinity_probability_cap': 2 / 3,
@@ -48,5 +48,3 @@ class LegalKG():
                     df['object'] = triple['object']
         logger.info(df)
         return df
-
-

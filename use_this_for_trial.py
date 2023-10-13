@@ -12,7 +12,7 @@ from legal_openai.openai_tasks import OpenaiTask
 load_dotenv()
 tagme_api_key = os.getenv("GCUBE_TOKEN")
 openai_api_key = os.getenv('OPENAI_API_KEY')
-os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY') 
+os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 
 # Initialise dependencies
 tokenizer = nltk.tokenize.punkt.PunktSentenceTokenizer()
@@ -72,7 +72,7 @@ quantulum_excel_file = 'quantulum'
 definitions_column = ['article', 'prompt_method', 'definition_term', 'definition_text',
                       'relationship', 'reference_text', 'reference_relationship']
 deontic_modality_column = ['article', 'prompt_method', 'atomic_statement/text', 'class/type', 'action',
-                          'active_role/norm_addresse', 'passive_role/beneficiary']
+                           'active_role/norm_addresse', 'passive_role/beneficiary']
 exceptions_column = ['article', 'prompt_method', 'exception']
 if_then_column = ['article', 'prompt_method', 'if_statement',
                   'then_statement', 'condition_type']
@@ -83,6 +83,8 @@ scope_column = ['article', 'prompt_method', 'scope', 'scope_type']
 # Prompt path list
 prompt_paths = [prompt_path_human, prompt_path_role_playing,
                 prompt_path_cot, prompt_path_normal_prompt]
+
+
 # Write output to excel sheets
 def write_excelsheet(output, file, article_split, task_type='entity'):
     if output is not None:
@@ -126,6 +128,7 @@ def write_excelsheet(output, file, article_split, task_type='entity'):
                     row += 1
                     worksheet.write(row, col, key)
                     worksheet.write(row, col + 1, output[key])
+
 
 # Process data
 def data_process(article=None, task=None, data=None, prompt_type=None):
@@ -177,26 +180,26 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
         definitions_df = pd.DataFrame(columns=definitions_column)
         for key in data.keys():
             if key == 'definition':
-                    for i in data[key]:
-                        try:
-                            if 'reference' in i and i['reference'] is not None:
-                                    temp_list = [article, prompt_type, i['definition_term'],
-                                                 i['definition_text'], i['relationship'], 
-                                                 i['reference']['text'],
-                                                 i['reference']['relationship']]
-                                    definitions_df.loc[len(definitions_df)] = temp_list
-                            else:
-                                temp_list = [article, prompt_type, i['definition_term'],
-                                             i['definition_text'], i['relationship'],
-                                             'NA', 'NA']
-                                definitions_df.loc[len(definitions_df)] = temp_list
-                        except KeyError:
-                                with open(f'./output/definitions/{article}_{task}.json', 'w') as f:
-                                    json.dump(data, f, indent=4)
-                                    print(f'Exception in {article}')
-                                temp_list = [article, prompt_type, 'In the JSON file',
-                                            'NA', 'NA', 'NA', 'NA']
-                                definitions_df.loc[len(definitions_df)] = temp_list
+                for i in data[key]:
+                    try:
+                        if 'reference' in i and i['reference'] is not None:
+                            temp_list = [article, prompt_type, i['definition_term'],
+                                         i['definition_text'], i['relationship'],
+                                         i['reference']['text'],
+                                         i['reference']['relationship']]
+                            definitions_df.loc[len(definitions_df)] = temp_list
+                        else:
+                            temp_list = [article, prompt_type, i['definition_term'],
+                                         i['definition_text'], i['relationship'],
+                                         'NA', 'NA']
+                            definitions_df.loc[len(definitions_df)] = temp_list
+                    except KeyError:
+                        with open(f'./output/definitions/{article}_{task}.json', 'w') as f:
+                            json.dump(data, f, indent=4)
+                            print(f'Exception in {article}')
+                        temp_list = [article, prompt_type, 'In the JSON file',
+                                     'NA', 'NA', 'NA', 'NA']
+                        definitions_df.loc[len(definitions_df)] = temp_list
         return definitions_df
     if task == 'deontic_modality':
         deontic_modality_df = pd.DataFrame(columns=deontic_modality_column)
@@ -226,7 +229,7 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                         deontic_modality_df.loc[len(deontic_modality_df)] = [article,
                                                                              prompt_type,
                                                                              'In the JSON file',
-                                                                            'NA', 'NA', 'NA', 'NA']
+                                                                             'NA', 'NA', 'NA', 'NA']
         return deontic_modality_df
     if task == 'exceptions':
         exceptions_df = pd.DataFrame(columns=exceptions_column)
@@ -278,8 +281,10 @@ def data_process(article=None, task=None, data=None, prompt_type=None):
                         temp_list = [article, prompt_type, i['text'], 'None']
                     else:
                         temp_list = [article, prompt_type, i['text'], i['scope_type']]
-                    scope_df.loc[len(scope_df)] = temp_list 
+                    scope_df.loc[len(scope_df)] = temp_list
         return scope_df
+
+
 # Method to run definition recognition will prompts for a given article
 def execute_tasks(article=None, openai_obj=None, task=None, prompt=None):
     if article is None:
@@ -334,6 +339,8 @@ def execute_tasks(article=None, openai_obj=None, task=None, prompt=None):
                 print("No prompt provided, exiting")
                 sys.exit(1)
         return processed_data_final
+
+
 # Provide path from which files are to be read
 # Not as sub directories but just text files
 _path = './input/test_provisions/'
@@ -341,7 +348,7 @@ for article in os.listdir(_path):
     if article.endswith('.txt'):
         article_split = article.split('.txt')[0]
         # Change index value to False if you don't want to index the text
-        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=True) 
+        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=True)
         '''
         # Definition recognition with openai
         print(f"Processing {article} with openai for definitions")

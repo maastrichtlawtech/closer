@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 openai.log = "info"
 
+
 class OpenAiNew:
     def __init__(self):
         openai.api_key = os.environ["OPENAI_API_KEY"]
@@ -74,21 +75,24 @@ class OpenAiNew:
                 graph_store = SimpleGraphStore()
                 storage_context = StorageContext.from_defaults(graph_store=graph_store)
                 index = KnowledgeGraphIndex.from_documents(documents,
-                                                          max_triplets_per_chunk=3,
-                                                          storage_context=storage_context,
-                                                          service_context=service_context)
+                                                           max_triplets_per_chunk=3,
+                                                           storage_context=storage_context,
+                                                           service_context=service_context)
             else:
                 index = VectorStoreIndex.from_documents(documents, service_context=service_context)
             index.index_struct.index_id = filename
             index.storage_context.persist(persist_dir=f"{path}/storage/")
         else:
             index = load_index_from_storage(storage_context=StorageContext.from_defaults(
-                persist_dir=path+ '/storage' + filename + '/'),
+                persist_dir=path + '/storage' + filename + '/'),
                 service_context=service_context)
         if task_type == 'kg_creation':
-            triples = index._extract_triplets()
-            logger.info(triples)
-            return self.eval_brokenliteral(triples)
+            with open(f"{path}/{filename}.txt") as f:
+                text = f.read()
+                index = KnowledgeGraphIndex(max_triplets_per_chunk=3)
+                triples = index._extract_triplets(text)
+                logger.info(triples)
+                return triples
         else:
             query_engine = index.as_query_engine()
             response = query_engine.query(prompt)

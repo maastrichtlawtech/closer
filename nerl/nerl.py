@@ -5,9 +5,10 @@ import re
 import nltk
 import spacy
 import tagme
-from legal_openai.openai_tasks import OpenaiTask
 from nltk.stem.snowball import SnowballStemmer
 from refined.inference.processor import Refined
+
+from legal_openai.openai_tasks import OpenaiTask
 
 
 class EntityRecognizer:
@@ -64,7 +65,7 @@ class EntityRecognizer:
         if len(tokens_list) == 1:
             for token in tokens_list:
                 if token != '':
-                    regex += self.token_cleaning(token, stemmer) 
+                    regex += self.token_cleaning(token, stemmer)
         else:
             count = len(tokens_list)
             for token in tokens_list:
@@ -78,8 +79,8 @@ class EntityRecognizer:
 
     def eurovoc_recognize(self, text, tsv_file=None,
                           eurovoc_link='http://eurovoc.europa.eu/'):
-        eurovoc_dict, eurovoc_reverse_dict, uri_list, concept_list = self.tsv_to_dict(\
-                                                                                      tsv_file)
+        eurovoc_dict, eurovoc_reverse_dict, uri_list, concept_list = self.tsv_to_dict( \
+            tsv_file)
         stemmer_en = SnowballStemmer("english")
         text = text.lower()
         entity_uri = {}
@@ -88,8 +89,7 @@ class EntityRecognizer:
                 regex = self.RegexFromTerm(concept, stemmer_en)
                 if re.search(regex, text) is not None:
                     entity_uri[concept] = eurovoc_link + eurovoc_reverse_dict[concept]
-        return entity_uri 
-
+        return entity_uri
 
     def wikipedia_tagme(self, text, tagme_api_key, threshold=0.5):
         tagme.GCUBE_TOKEN = tagme_api_key
@@ -97,7 +97,7 @@ class EntityRecognizer:
         entity_uri = {}
         for ann in annotations.get_annotations(threshold):
             entity_uri[ann.entity_title] = ann.uri()
-        return entity_uri 
+        return entity_uri
 
     def refined_recognize(self, text, model_name='wikipedia_model',
                           entity_set='wikidata',
@@ -114,8 +114,8 @@ class EntityRecognizer:
         if prompt is None:
             with open(self.prompt_path + '/normal_prompts/entity_recognition.txt', 'r') as f:
                 prompt = f.read()
-        response = OpenaiTask(path=path,api_key=api_key,use_index=use_index).execute_task(
-            article=article,prompt=prompt)
+        response = OpenaiTask(path=path, api_key=api_key, use_index=use_index).execute_task(
+            article=article, prompt=prompt)
         return response
 
     def openai_wikidata_recognize(self, api_key=None, article=None, prompt=None,
