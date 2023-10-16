@@ -28,7 +28,7 @@ class OpenAiNew:
         # https://stackoverflow.com/questions/75503925/how-to-extract-incomplete-python-objects-from-string
         try:
             return ast.literal_eval(value_obj)
-        except SyntaxError as se:
+        except (SyntaxError, ValueError) as se:
             eval_error = se
             bracket_pairs = {'{': '}', '[': ']'}
             closers, cur_closer = [], ''
@@ -42,7 +42,7 @@ class OpenAiNew:
                 while sub_str[1:]:
                     try:
                         return ast.literal_eval(sub_str + closer)
-                    except SyntaxError:
+                    except (SyntaxError, ValueError):
                         sub_str = sub_str[:-1].strip()
             if print_error:
                 print(f"Error: {repr(eval_error)}")

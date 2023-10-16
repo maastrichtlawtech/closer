@@ -348,7 +348,7 @@ for article in os.listdir(_path):
     if article.endswith('.txt'):
         article_split = article.split('.txt')[0]
         # Change index value to False if you don't want to index the text
-        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=True)
+        openai_obj = OpenaiTask(path=_path, temperature=0, use_index=False)
         '''
         # Definition recognition with openai
         print(f"Processing {article} with openai for definitions")

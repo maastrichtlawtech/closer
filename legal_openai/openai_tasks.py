@@ -59,7 +59,7 @@ class OpenaiTask:
         # https://stackoverflow.com/questions/75503925/how-to-extract-incomplete-python-objects-from-string
         try:
             return ast.literal_eval(value_obj)
-        except SyntaxError as se:
+        except (SyntaxError, ValueError) as se:
             eval_error = se
             bracket_pairs = {'{': '}', '[': ']'}
             closers, cur_closer = [], ''
@@ -73,7 +73,7 @@ class OpenaiTask:
                 while sub_str[1:]:
                     try:
                         return ast.literal_eval(sub_str + closer)
-                    except SyntaxError:
+                    except (SyntaxError, ValueError):
                         sub_str = sub_str[:-1].strip()
             if print_error:
                 print(f"Error: {repr(eval_error)}")
@@ -101,7 +101,10 @@ class OpenaiTask:
             query_engine = index.as_query_engine()
             full_response = ''
             while True:
-                resp = query_engine.query(prompt + '\n\n' + full_response)
+                try:
+                    resp = query_engine.query(prompt + '\n\n' + full_response)
+                except ValueError:
+                    return self.eval_brokenliteral(full_response)
                 if resp.response != "Empty Response":
                     full_response += (" " + resp.response)
                 else:
@@ -113,11 +116,15 @@ class OpenaiTask:
             query_engine = index.as_query_engine()
             full_response = ''
             while True:
-                resp = query_engine.query(prompt + '\n\n' + full_response)
+                try:
+                    resp = query_engine.query(prompt + '\n\n' + full_response)
+                except ValueError:
+                    return self.eval_brokenliteral(full_response)
                 print(resp.response)
                 if resp.response != "Empty Response":
                     full_response += (" " + resp.response)
                 else:
                     break
+
             print(full_response)
             return self.eval_brokenliteral(full_response)
