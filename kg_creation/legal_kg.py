@@ -3,7 +3,6 @@ import sys
 
 import pandas as pd
 from openie import StanfordOpenIE
-
 logger = logging.getLogger(__name__)
 
 
@@ -20,15 +19,22 @@ class LegalKG:
             logging.exception("No text to extract triples from")
             sys.exit(1)
         triple_list = []
-        with StanfordOpenIE(properties=self.properties) as client:
+        try:
+            client = StanfordOpenIE(properties=self.properties)
             for triple in client.annotate(text):
                 logger.info('|-' + str(triple))
                 triple_list.append(triple)
-            if image_name is None:
-                logger.info("Image name not provided")
-            else:
+        except:
+            logger.error("StanfordOpenIE server failed. Please make sure you have java 64-bit installed on your device.")
+            return
+        if image_name is None:
+            logger.info("Image name not provided")
+        else:
+            try:
                 client.generate_graphviz_graph(text, image_path + image_name + '.png')
                 logger.info('Graph generated:' + image_path + image_name + '.png')
+            except:
+                logger.error("Graphviz not installed! Please install graphviz and add it to your PATH variable!")
         return triple_list
 
     # Convert triples to RDF

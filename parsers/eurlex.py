@@ -84,7 +84,7 @@ class SplitHTMLArticle(SplitRule):
 
     def split_text(self, text: str) -> list[str]:
         res = []
-        soup = BeautifulSoup(text, 'html.parser')
+        soup = BeautifulSoup(text, 'html.parsers')
         oj_format = False
 
         def get_field(s):
